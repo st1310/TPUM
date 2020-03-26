@@ -1,7 +1,7 @@
 # TPUM
 
 ### Programming of Mobile Devices - Programowanie urządzeń mobilnych
-#### Stetsenko A.
+#### Stetsenko A. 234154
 
 ## Goal 
 
