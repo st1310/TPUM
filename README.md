@@ -1,7 +1,12 @@
 # TPUM
 
 ### Programming of Mobile Devices - Programowanie urządzeń mobilnych
-#### Stetsenko A. 234154
+## Team
+
+| Name Surname (initials) | GUID                                     |
+| ----------------------- | ---------------------------------------- |
+| AS                      | `{a7527c5f-f4ab-42da-a801-bf787cda5787}` |
+| JS                      | `{e9b605e1-bf70-4504-9f76-1e1aa464c7f6}` |
 
 ## Goal 
 
