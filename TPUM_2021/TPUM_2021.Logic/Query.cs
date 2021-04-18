@@ -6,7 +6,7 @@ using TPUM_2021.Data;
 
 namespace TPUM_2021.Logic
 {
-    public class Query<TEntity, TEntityDto> : IQuery<TEntity, TEntityDto> 
+    public class Query<TEntity, TEntityDto> : IQuery<TEntity, TEntityDto>
         where TEntity : Entity, new()
         where TEntityDto : class, new()
     {
@@ -28,7 +28,7 @@ namespace TPUM_2021.Logic
         {
             IEnumerable<TEntity> entities = _repository.Get();
 
-            return entities.Select(x => _mapper.Map<TEntity, TEntityDto>(x));
+            return entities.Select(x => _mapper.Map<TEntity, TEntityDto>(x)).ToList();
         }
 
         public virtual TEntityDto GetById(object id)

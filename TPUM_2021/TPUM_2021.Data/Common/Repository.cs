@@ -41,7 +41,7 @@ namespace TPUM_2021.Data
                 IQueryable<TEntity> entities = ((List<TEntity>)_context[_entityType]).AsQueryable();
 
                 if (filter != null)
-                    entities.Where(filter);
+                    return entities.Where(filter);
 
                 return entities;
             }

@@ -23,14 +23,14 @@ namespace TPUM_2021.Logic
         {
             IEnumerable<Product> products = _repository.Get(x => x.CustomerId == null || x.CustomerId == 0);
 
-            return products.Select(x => _mapper.Map<Product, ProductDto>(x));
+            return products.Select(x => _mapper.Map<Product, ProductDto>(x)).ToList();
         }
 
         public IEnumerable<ProductDto> GetProductsByCustomerId(int id)
         {
             IEnumerable<Product> products = _repository.Get(x => x.CustomerId == id);
 
-            return products.Select(x => _mapper.Map<Product, ProductDto>(x));
+            return products.Select(x => _mapper.Map<Product, ProductDto>(x)).ToList();
         }
     }
 }

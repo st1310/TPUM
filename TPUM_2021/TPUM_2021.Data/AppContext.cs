@@ -13,8 +13,8 @@ namespace TPUM_2021.Data
         {
             typeListPairs = new Dictionary<Type, IEnumerable<object>>
             {
-                { typeof(Customer), new List<Customer>() },
-                { typeof(Product), new List<Product>() },
+                { typeof(Customer), new List<Customer>{ new Customer {Id=1,Name = "Karol", Funds = 400} } },
+                { typeof(Product), new List<Product>{ new Product {Id=1, Name="product1", Price = 10 , CustomerId = null}, new Product { Id = 2, Name = "product2", Price = 20 , CustomerId=1} } },
                 { typeof(Invoice), new List<Invoice>() }
             };
         }

@@ -10,6 +10,7 @@ namespace TPUM_2021.Logic
     {
         public Mapper()
         {
+            MappingTypes = new Dictionary<object, object>();
             CreateMap<Customer, CustomerDto>();
             CreateMap<CustomerDto, Customer>();
 
