@@ -9,7 +9,12 @@ namespace TPUM_2021.Logic
 {
     public class ProductQuery : Query<Product, ProductDto>, IProductQuery
     {
-        public ProductQuery(IRepository<Product> repository, IMapper mapper) : base(repository, mapper)
+        public ProductQuery() : base()
+        {
+
+        }
+
+        public ProductQuery(IMapper mapper, IRepository<Product> repository) : base(mapper, repository)
         {
 
         }

@@ -2,20 +2,30 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
+using TPUM_2021.Data.Model;
 
 namespace TPUM_2021.Logic
 {
     public class Mapper : IMapper
     {
+        public Mapper()
+        {
+            CreateMap<Customer, CustomerDto>();
+            CreateMap<CustomerDto, Customer>();
+
+            CreateMap<Product, ProductDto>();
+            CreateMap<Customer, CustomerDto>();
+        }
+
         public Dictionary<object, object> MappingTypes { get; set; }
 
         public void CreateMap<TSource, TDestination>()
             where TSource : new()
             where TDestination : new()
         {
-            if (!this.MappingTypes.ContainsKey(typeof(TSource)))
+            if (!MappingTypes.ContainsKey(typeof(TSource)))
             {
-                this.MappingTypes.Add(typeof(TSource), typeof(TDestination));
+                MappingTypes.Add(typeof(TSource), typeof(TDestination));
             }
         }
 

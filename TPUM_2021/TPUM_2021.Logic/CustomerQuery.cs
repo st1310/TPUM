@@ -8,7 +8,12 @@ namespace TPUM_2021.Logic
 {
     public class CustomerQuery : Query<Customer, CustomerDto>
     {
-        public CustomerQuery(IRepository<Customer> repository, IMapper mapper) : base(repository, mapper)
+        public CustomerQuery() : base()
+        {
+
+        }
+
+        public CustomerQuery(IMapper mapper, IRepository<Customer> repository) : base(mapper, repository)
         {
 
         }

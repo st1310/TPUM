@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace TPUM_2021.Data.Common
+namespace TPUM_2021.Data
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity
     {

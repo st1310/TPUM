@@ -13,7 +13,12 @@ namespace TPUM_2021.Logic
         protected IRepository<TEntity> _repository;
         protected IMapper _mapper;
 
-        public Command(IRepository<TEntity> repository, IMapper mapper)
+        public Command() : this(DependencyResolver.Mapper, new Repository<TEntity>(DependencyResolver.Context))
+        {
+
+        }
+
+        public Command(IMapper mapper, IRepository<TEntity> repository)
         {
             _repository = repository;
             _mapper = mapper;
