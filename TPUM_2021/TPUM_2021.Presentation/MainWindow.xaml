@@ -11,8 +11,7 @@
         <vm:MainViewModel x:Key="MainViewModel"/>
     </Window.Resources>
     <Grid DataContext="{StaticResource MainViewModel}">
-        <Button Content="Change Prices" HorizontalAlignment="Left" Margin="40,347,0,0" VerticalAlignment="Top" Height="53" Width="128" Command="{Binding DoCommand}"/>
-        <Button Content="Buy Product" HorizontalAlignment="Left" Margin="207,347,0,0" VerticalAlignment="Top" Height="53" Width="127" Command="{Binding DoNextCommand}"/>
+        <Button Content="Buy Product" HorizontalAlignment="Left" Margin="10,334,0,0" VerticalAlignment="Top" Height="30" Width="100" Command="{Binding BuyCommand}"/>
         <StackPanel Margin="0,0,0,105">
             <ListView x:Name="lsvProductMaster" ItemsSource="{Binding Products}" SelectedItem="{Binding CurrentProduct}" Height="175">
                 <ListView.View>
@@ -28,8 +27,8 @@
                     <GridView>
                         <GridViewColumn Header="Product ID" DisplayMemberBinding="{Binding Id}" Width="100"/>
                         <GridViewColumn Header="Product Name" DisplayMemberBinding="{Binding Name}" Width="250"/>
-                        <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Price}" Width="250"/>
-                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding CustomerId}" Width="250"/>
+                        <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Price}" Width="100"/>
+                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding CustomerId}" Width="100"/>
                     </GridView>
                 </ListView.View>
             </ListView>

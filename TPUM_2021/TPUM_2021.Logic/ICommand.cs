@@ -12,5 +12,6 @@ namespace TPUM_2021.Logic
         void Delete(TEntityDto entity);
         void Insert(TEntityDto entity);
         void InsertRange(IEnumerable<TEntityDto> entities);
+        void Update(int id, TEntityDto entity);
     }
 }

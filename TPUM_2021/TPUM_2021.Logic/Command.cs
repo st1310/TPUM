@@ -38,5 +38,13 @@ namespace TPUM_2021.Logic
         {
             throw new NotImplementedException();
         }
+
+        public virtual void Update(int id, TEntityDto entity)
+        {
+            TEntity obj = _repository.Get(x => x.Id == id).FirstOrDefault();
+
+            _repository.Delete(obj);
+            _repository.Insert(_mapper.Map<TEntityDto, TEntity>(entity));
+        }
     }
 }

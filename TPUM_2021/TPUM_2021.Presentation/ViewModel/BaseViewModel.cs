@@ -12,7 +12,7 @@ namespace TPUM_2021.Presentation.ViewModel
 
         internal virtual void RaisePropertyChanged([CallerMemberName] string propertyName = null)
         {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

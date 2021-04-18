@@ -65,5 +65,20 @@ namespace TPUM_2021.Logic
                 _productQuery = value;
             }
         }
+
+        private static ProductCommand _productCommand = null;
+        public static ProductCommand ProductCommand
+        {
+            get
+            {
+                _productCommand ??= new ProductCommand();
+                return _productCommand ?? new ProductCommand();
+            }
+
+            set
+            {
+                _productCommand = value;
+            }
+        }
     }
 }
