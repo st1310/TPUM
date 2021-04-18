@@ -5,7 +5,7 @@ using TPUM_2021.Data;
 
 namespace TPUM_2021.Logic
 {
-    public class Query<TEntity> : IQuery<TEntity> where TEntity : Entity
+    public class Query<TEntity, TEntityDto> : IQuery<TEntity, TEntityDto> where TEntity : Entity
     {
         IRepository<TEntity> _repository;
 
@@ -14,12 +14,12 @@ namespace TPUM_2021.Logic
             _repository = repository;
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public virtual IEnumerable<TEntityDto> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public TEntity GetById(object id)
+        public virtual TEntityDto GetById(object id)
         {
             throw new NotImplementedException();
         }

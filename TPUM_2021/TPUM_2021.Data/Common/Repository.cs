@@ -9,6 +9,7 @@ namespace TPUM_2021.Data.Common
     {
         private readonly AppContext _context;
         private readonly Type _entityType;
+        private static object _lock = new object();
 
         public Repository(AppContext context)
         {
@@ -18,38 +19,56 @@ namespace TPUM_2021.Data.Common
 
         public virtual void Delete(TEntity entity)
         {
-            ((List<TEntity>)_context[_entityType]).Remove(entity);
+            lock (_lock)
+            {
+                ((List<TEntity>)_context[_entityType]).Remove(entity);
+            }
         }
 
         public virtual void Delete(object id)
         {
-            TEntity entity = ((List<TEntity>)_context[_entityType]).First(x => x.Id == (int)id);
-            ((List<TEntity>)_context[_entityType]).Remove(entity);
+            lock (_lock)
+            {
+                TEntity entity = ((List<TEntity>)_context[_entityType]).First(x => x.Id == (int)id);
+                ((List<TEntity>)_context[_entityType]).Remove(entity);
+            }
         }
 
         public virtual IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null)
         {
-            IQueryable<TEntity> entities = ((List<TEntity>)_context[_entityType]).AsQueryable();
+            lock (_lock)
+            {
+                IQueryable<TEntity> entities = ((List<TEntity>)_context[_entityType]).AsQueryable();
 
-            if (filter != null)
-                entities.Where(filter);
+                if (filter != null)
+                    entities.Where(filter);
 
-            return entities;
+                return entities;
+            }
         }
 
         public virtual TEntity GetById(object id)
         {
-            return ((List<TEntity>)_context[_entityType]).First(x => x.Id == (int)id);
+            lock (_lock)
+            {
+                return ((List<TEntity>)_context[_entityType]).First(x => x.Id == (int)id);
+            }
         }
 
         public virtual void Insert(TEntity entity)
         {
-            ((List<TEntity>)_context[_entityType]).Add(entity);
+            lock (_lock)
+            {
+                ((List<TEntity>)_context[_entityType]).Add(entity);
+            }
         }
 
         public virtual void InsertRange(IEnumerable<TEntity> entities)
         {
-            ((List<TEntity>)_context[_entityType]).AddRange(entities);
+            lock (_lock)
+            {
+                ((List<TEntity>)_context[_entityType]).AddRange(entities);
+            }
         }
     }
 }

@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TPUM_2021.Data\TPUM_2021.Data.csproj" />
+  </ItemGroup>
+
 </Project>

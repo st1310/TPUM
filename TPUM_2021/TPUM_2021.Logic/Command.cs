@@ -5,7 +5,7 @@ using TPUM_2021.Data;
 
 namespace TPUM_2021.Logic
 {
-    public class Command<TEntity> : ICommand<TEntity> where TEntity : Entity
+    public class Command<TEntity, TEntityDto> : ICommand<TEntity, TEntityDto> where TEntity : Entity
     {
         IRepository<TEntity> _repository;
 
@@ -14,17 +14,17 @@ namespace TPUM_2021.Logic
             _repository = repository;
         }
 
-        public void Delete(TEntity entity)
+        public virtual void Delete(TEntityDto entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Insert(TEntity entity)
+        public virtual void Insert(TEntityDto entity)
         {
             throw new NotImplementedException();
         }
 
-        public void InsertRange(IEnumerable<TEntity> entities)
+        public virtual void InsertRange(IEnumerable<TEntityDto> entities)
         {
             throw new NotImplementedException();
         }

@@ -5,10 +5,10 @@ using TPUM_2021.Data;
 
 namespace TPUM_2021.Logic
 {
-    public interface ICommand<TEntity> where TEntity: Entity
+    public interface ICommand<TEntity, TEntityDto> where TEntity: Entity
     {
-        void Delete(TEntity entity);
-        void Insert(TEntity entity);
-        void InsertRange(IEnumerable<TEntity> entities);
+        void Delete(TEntityDto entity);
+        void Insert(TEntityDto entity);
+        void InsertRange(IEnumerable<TEntityDto> entities);
     }
 }
