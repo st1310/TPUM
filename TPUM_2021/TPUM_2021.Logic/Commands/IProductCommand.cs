@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TPUM_2021.Data.Model;
+using TPUM_2021.Data;
 
 namespace TPUM_2021.Logic
 {
-    public interface IProductCommand : ICommand<Product, ProductDto>
+    public interface IProductCommand : ICommand<IProduct, ProductDto>
     {
     }
 }

@@ -6,8 +6,8 @@ using TPUM_2021.Data;
 namespace TPUM_2021.Logic
 {
     public interface ICommand<TEntity, TEntityDto>
-        where TEntity : Entity, new()
-        where TEntityDto : class, new()
+        where TEntity : IEntity
+        where TEntityDto : class
     {
         void Delete(TEntityDto entity);
         void Insert(TEntityDto entity);

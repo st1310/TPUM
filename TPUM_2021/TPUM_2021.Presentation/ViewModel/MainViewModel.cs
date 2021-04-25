@@ -100,10 +100,10 @@ namespace TPUM_2021.Presentation.ViewModel
             BuyCommand = new RelayCommand(BuyCurrentProduct);
             AddSomeProductsCommand = new RelayCommand(SetTimer);
 
-            _ProductQuery = DependencyResolver.ProductQuery;
-            _CustomerQuery = DependencyResolver.CustomerQuery;
+            _ProductQuery = LogicFactory.ProductQuery;
+            _CustomerQuery = LogicFactory.CustomerQuery;
 
-            _ProductCommand = DependencyResolver.ProductCommand;
+            _ProductCommand = LogicFactory.ProductCommand;
 
             _Customers = new ObservableCollection<CustomerDto>(_CustomerQuery.GetAll());
             _CurrentCustomer = Customers[0];
@@ -146,6 +146,9 @@ namespace TPUM_2021.Presentation.ViewModel
 
         public void BuyCurrentProduct()
         {
+            if (CurrentProduct == null)
+                return;
+
             CurrentProduct.CustomerId = CurrentCustomer.Id;
             _ProductCommand.Update(CurrentProduct.Id, CurrentProduct);
 

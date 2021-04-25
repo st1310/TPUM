@@ -4,23 +4,8 @@ using System.Text;
 
 namespace TPUM_2021.Logic
 {
-    public static class DependencyResolver
+    public static class LogicFactory
     {
-        private static Data.AppContext _context = null;
-        public static Data.AppContext Context
-        {
-            get
-            {
-                _context ??= new Data.AppContext();
-                return _context ?? new Data.AppContext();
-            }
-
-            set
-            {
-                _context = value;
-            }
-        }
-
         private static Mapper _mapper = null;
         public static Mapper Mapper
         {

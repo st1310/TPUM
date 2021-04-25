@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
-using TPUM_2021.Data.Model;
+using TPUM_2021.Data;
 
 namespace TPUM_2021.Logic
 {
@@ -11,17 +11,17 @@ namespace TPUM_2021.Logic
         public Mapper()
         {
             MappingTypes = new Dictionary<object, object>();
-            CreateMap<Customer, CustomerDto>();
-            CreateMap<CustomerDto, Customer>();
+            CreateMap<ICustomer, CustomerDto>();
+            //CreateMap<CustomerDto, ICustomer>();
 
-            CreateMap<Product, ProductDto>();
-            CreateMap<Customer, CustomerDto>();
+            CreateMap<IProduct, ProductDto>();
+            CreateMap<ICustomer, CustomerDto>();
         }
 
         public Dictionary<object, object> MappingTypes { get; set; }
 
         public void CreateMap<TSource, TDestination>()
-            where TSource : new()
+            //where TSource : new()
             where TDestination : new()
         {
             if (!MappingTypes.ContainsKey(typeof(TSource)))
@@ -34,7 +34,7 @@ namespace TPUM_2021.Logic
             TSource realObject, TDestination dtoObject = null,
             Dictionary<object, object> alreadyInitializedObjects = null,
             bool shouldMapInnerEntities = true)
-            where TSource : class, new()
+            where TSource : IEntity//, new()
             where TDestination : class, new()
         {
             if (realObject == null)

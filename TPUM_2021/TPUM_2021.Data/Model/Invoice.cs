@@ -4,8 +4,9 @@ using System.Text;
 
 namespace TPUM_2021.Data.Model
 {
-    public class Invoice : Entity
+    internal class Invoice : IInvoice
     {
+        public int Id { get; set; }
         public int ProductId { get; set; }
         public int CustomerId { get; set; }
         public DateTime Date { get; set; }

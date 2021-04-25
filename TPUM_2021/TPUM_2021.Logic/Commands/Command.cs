@@ -7,18 +7,18 @@ using TPUM_2021.Data;
 namespace TPUM_2021.Logic
 {
     public class Command<TEntity, TEntityDto> : ICommand<TEntity, TEntityDto>
-        where TEntity : Entity, new()
-        where TEntityDto : class, new()
+        where TEntity : IEntity
+        where TEntityDto : class
     {
-        protected IRepository<TEntity> _repository;
+        protected IRepository _repository;
         protected IMapper _mapper;
 
-        public Command() : this(DependencyResolver.Mapper, new Repository<TEntity>(DependencyResolver.Context))
+        public Command(IRepository repository) : this(LogicFactory.Mapper, repository)
         {
 
         }
 
-        public Command(IMapper mapper, IRepository<TEntity> repository)
+        public Command(IMapper mapper, IRepository repository)
         {
             _repository = repository;
             _mapper = mapper;
@@ -41,10 +41,7 @@ namespace TPUM_2021.Logic
 
         public virtual void Update(int id, TEntityDto entity)
         {
-            TEntity obj = _repository.Get(x => x.Id == id).FirstOrDefault();
-
-            _repository.Delete(obj);
-            _repository.Insert(_mapper.Map<TEntityDto, TEntity>(entity));
+            throw new NotImplementedException();
         }
     }
 }
