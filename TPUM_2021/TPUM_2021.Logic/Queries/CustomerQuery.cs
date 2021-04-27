@@ -5,7 +5,7 @@ using TPUM_2021.Data;
 
 namespace TPUM_2021.Logic
 {
-    public class CustomerQuery : Query<ICustomer, CustomerDto>
+    public class CustomerQuery : Query<ICustomer, CustomerDto>, ICustomerQuery
     {
         public CustomerQuery() : base(DataFactory.CustomerRepository)
         {

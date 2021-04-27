@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TPUM_2021.GraphicalData.ViewModel;
+using TPUM_2021.Logic;
 
 namespace TPUM_2021.View
 {
@@ -22,6 +24,7 @@ namespace TPUM_2021.View
     {
         public MainWindow()
         {
+            DataContext = new MainViewModel(new ProductQuery(), new CustomerQuery(), new ProductCommand());
             InitializeComponent();
         }
     }

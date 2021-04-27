@@ -6,7 +6,7 @@ using TPUM_2021.Data;
 
 namespace TPUM_2021.Logic
 {
-    public class ProductCommand : Command<IProduct, ProductDto>
+    public class ProductCommand : Command<IProduct, ProductDto>, IProductCommand
     {
         public ProductCommand() : base(DataFactory.ProductRepository)
         {

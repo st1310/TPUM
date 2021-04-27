@@ -17,10 +17,10 @@ namespace TPUM_2021.GraphicalData.ViewModel
         private ObservableCollection<ProductDto> _Products;
         private ObservableCollection<ProductDto> _CustomerProducts;
         private ObservableCollection<CustomerDto> _Customers;
-        private ProductQuery _ProductQuery;
-        private CustomerQuery _CustomerQuery;
+        private IProductQuery _ProductQuery;
+        private ICustomerQuery _CustomerQuery;
 
-        private ProductCommand _ProductCommand;
+        private IProductCommand _ProductCommand;
 
         private ProductDto _CurrentProduct;
         private CustomerDto _CurrentCustomer;
@@ -95,15 +95,15 @@ namespace TPUM_2021.GraphicalData.ViewModel
             }
         }
 
-        public MainViewModel()
+        public MainViewModel(IProductQuery productQuery, ICustomerQuery customerQuery, IProductCommand productCommand)
         {
             BuyCommand = new RelayCommand(BuyCurrentProduct);
             AddSomeProductsCommand = new RelayCommand(SetTimer);
 
-            _ProductQuery = LogicFactory.ProductQuery;
-            _CustomerQuery = LogicFactory.CustomerQuery;
+            _ProductQuery = productQuery;
+            _CustomerQuery = customerQuery;
 
-            _ProductCommand = LogicFactory.ProductCommand;
+            _ProductCommand = productCommand;
 
             _Customers = new ObservableCollection<CustomerDto>(_CustomerQuery.GetAll());
             _CurrentCustomer = Customers[0];
