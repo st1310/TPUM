@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TPUM_2021.Data;
 using TPUM_2021.Data.Model;
 
 namespace TPUM_2021.Test.DataTests
@@ -34,10 +35,10 @@ namespace TPUM_2021.Test.DataTests
             var context = new Data.AppContext();
             context[typeof(Product)] = products;
 
-            var repositoryMock = new Mock<Data.Repository<Product>>(context) { CallBase = true };
+            var repositoryMock = new Mock<Data.Repository>(context) { CallBase = true };
 
             // Act
-            repositoryMock.Object.Delete(index);
+            repositoryMock.Object.Delete<Product>(index);
 
             // Assert
             Assert.AreEqual(context[typeof(Product)].ToList().Count, expectedResult.Count);
