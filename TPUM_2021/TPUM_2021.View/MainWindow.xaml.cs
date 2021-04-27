@@ -24,8 +24,8 @@ namespace TPUM_2021.View
     {
         public MainWindow()
         {
-            DataContext = new MainViewModel(new ProductQuery(), new CustomerQuery(), new ProductCommand());
             InitializeComponent();
+            DataContext = new MainViewModel(new ProductQuery(), new CustomerQuery(), new ProductCommand());
         }
     }
 }

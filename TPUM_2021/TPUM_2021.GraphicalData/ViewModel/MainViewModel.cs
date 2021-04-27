@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Input;
 using TPUM_2021.Logic;
 
@@ -11,16 +12,16 @@ namespace TPUM_2021.GraphicalData.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
-        public ICommand BuyCommand { get; }
-        public ICommand AddSomeProductsCommand { get; }
+        public ICommand BuyCommand { get; set; }
+        public ICommand AddSomeProductsCommand { get; set; }
 
         private ObservableCollection<ProductDto> _Products;
         private ObservableCollection<ProductDto> _CustomerProducts;
         private ObservableCollection<CustomerDto> _Customers;
-        private IProductQuery _ProductQuery;
-        private ICustomerQuery _CustomerQuery;
+        public IProductQuery _ProductQuery;
+        public ICustomerQuery _CustomerQuery;
 
-        private IProductCommand _ProductCommand;
+        public IProductCommand _ProductCommand;
 
         private ProductDto _CurrentProduct;
         private CustomerDto _CurrentCustomer;
@@ -97,13 +98,18 @@ namespace TPUM_2021.GraphicalData.ViewModel
 
         public MainViewModel(IProductQuery productQuery, ICustomerQuery customerQuery, IProductCommand productCommand)
         {
-            BuyCommand = new RelayCommand(BuyCurrentProduct);
-            AddSomeProductsCommand = new RelayCommand(SetTimer);
-
             _ProductQuery = productQuery;
             _CustomerQuery = customerQuery;
 
             _ProductCommand = productCommand;
+
+            SetViewModel();
+        }
+
+        public void SetViewModel()
+        {
+            BuyCommand = new RelayCommand(BuyCurrentProduct);
+            AddSomeProductsCommand = new RelayCommand(SetTimer);
 
             _Customers = new ObservableCollection<CustomerDto>(_CustomerQuery.GetAll());
             _CurrentCustomer = Customers[0];
