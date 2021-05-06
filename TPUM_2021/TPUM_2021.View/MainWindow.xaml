@@ -13,6 +13,7 @@
     <Grid>
         <Button Content="Buy Product" HorizontalAlignment="Left" Margin="10,334,0,0" VerticalAlignment="Top" Height="30" Width="100" Command="{Binding BuyCommand}" />
         <Button Content="Increase Prices" HorizontalAlignment="Left" Margin="200,334,0,0" VerticalAlignment="Top" Height="30" Width="100" Command="{Binding AddSomeProductsCommand}" />
+        <Button Content="serialize" HorizontalAlignment="Left" Margin="400,334,0,0" VerticalAlignment="Top" Height="30" Width="100" Command="{Binding SerializeCommand}" />
         <StackPanel Margin="0,0,0,105">
             <ListView x:Name="lsvProductMaster" ItemsSource="{Binding Products}" SelectedItem="{Binding CurrentProduct}" Height="175">
                 <ListView.View>

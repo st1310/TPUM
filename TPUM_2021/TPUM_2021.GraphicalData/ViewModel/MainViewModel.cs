@@ -14,6 +14,8 @@ namespace TPUM_2021.GraphicalData.ViewModel
     {
         public ICommand BuyCommand { get; set; }
         public ICommand AddSomeProductsCommand { get; set; }
+        public ICommand SerializeCommand { get; set; }
+
 
         private ObservableCollection<ProductDto> _Products;
         private ObservableCollection<ProductDto> _CustomerProducts;
@@ -120,6 +122,7 @@ namespace TPUM_2021.GraphicalData.ViewModel
         {
             BuyCommand = new RelayCommand(BuyCurrentProduct);
             AddSomeProductsCommand = new RelayCommand(SetTimer);
+            SerializeCommand = new RelayCommand(SerializeFunction);
 
             _Customers = new ObservableCollection<CustomerDto>(_CustomerQuery.GetAll());
             _CurrentCustomer = Customers[0];
@@ -127,6 +130,13 @@ namespace TPUM_2021.GraphicalData.ViewModel
             _Products = new ObservableCollection<ProductDto>(_ProductQuery.GetAvailableProducts());
             _CustomerProducts = new ObservableCollection<ProductDto>(_ProductQuery.GetProductsByCustomerId(_CurrentCustomer.Id));
             _CurrentProduct = Products[0];
+        }
+
+        private void SerializeFunction()
+        {
+            XMLSerializer xML = new XMLSerializer(Products);
+            SerializationManager serializationManager = new SerializationManager(xML);
+            serializationManager.Serialize();
         }
 
         public void SetTimer()
