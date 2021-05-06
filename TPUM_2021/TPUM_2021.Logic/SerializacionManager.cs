@@ -7,8 +7,8 @@ namespace TPUM_2021.Logic
 {
     public class SerializationManager
     {
-        private BasicSerializer basicSerializer;
-        public SerializationManager(BasicSerializer basicSerializer)
+        private IBasicSerializer basicSerializer;
+        public SerializationManager(IBasicSerializer basicSerializer)
         {
             this.basicSerializer = basicSerializer;
         }

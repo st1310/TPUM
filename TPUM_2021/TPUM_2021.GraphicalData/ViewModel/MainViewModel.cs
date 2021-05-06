@@ -134,8 +134,8 @@ namespace TPUM_2021.GraphicalData.ViewModel
 
         private void SerializeFunction()
         {
-            XMLSerializer xML = new XMLSerializer(Products);
-            SerializationManager serializationManager = new SerializationManager(xML);
+            XmlSerializer xml = new XmlSerializer(Products);
+            SerializationManager serializationManager = new SerializationManager(xml);
             serializationManager.Serialize();
         }
 

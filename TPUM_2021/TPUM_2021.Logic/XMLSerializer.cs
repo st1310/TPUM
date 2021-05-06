@@ -9,10 +9,10 @@ using TPUM_2021.Data;
 
 namespace TPUM_2021.Logic
 {
-    public class XMLSerializer : BasicSerializer
+    public class XmlSerializer : IBasicSerializer
     {
         private ObservableCollection<ProductDto> _Products;
-        public XMLSerializer(ObservableCollection<ProductDto> products)
+        public XmlSerializer(ObservableCollection<ProductDto> products)
         {
             _Products = products;
         }
@@ -27,11 +27,9 @@ namespace TPUM_2021.Logic
         {
             if (_Products.Count != 0)
             {
-                XmlSerializer xs = new XmlSerializer(typeof(ObservableCollection<ProductDto>));
-                using (StreamWriter wr = new StreamWriter("products.xml"))
-                {
-                    xs.Serialize(wr, _Products);
-                }
+                System.Xml.Serialization.XmlSerializer xs = new System.Xml.Serialization.XmlSerializer(typeof(ObservableCollection<ProductDto>));
+                using StreamWriter wr = new StreamWriter("products.xml");
+                xs.Serialize(wr, _Products);
             }
         }
     }
