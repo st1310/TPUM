@@ -96,6 +96,16 @@ namespace TPUM_2021.GraphicalData.ViewModel
             }
         }
 
+        public MainViewModel()
+        {
+            _ProductQuery = LogicFactory.ProductQuery;
+            _CustomerQuery = LogicFactory.CustomerQuery;
+
+            _ProductCommand = LogicFactory.ProductCommand;
+
+            SetViewModel();
+        }
+
         public MainViewModel(IProductQuery productQuery, ICustomerQuery customerQuery, IProductCommand productCommand)
         {
             _ProductQuery = productQuery;

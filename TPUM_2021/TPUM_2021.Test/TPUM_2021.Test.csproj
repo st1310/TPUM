@@ -16,7 +16,6 @@
   <ItemGroup>
     <ProjectReference Include="..\TPUM_2021.Data\TPUM_2021.Data.csproj" />
     <ProjectReference Include="..\TPUM_2021.Logic\TPUM_2021.Logic.csproj" />
-    <ProjectReference Include="..\TPUM_2021\TPUM_2021.csproj" />
   </ItemGroup>
 
   <ItemGroup>
