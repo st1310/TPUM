@@ -15,21 +15,34 @@ namespace TPUM_2021.ServerPresentation
 
         protected readonly int p2p_port;
         protected List<WebSocketConnection> Sockets { get; set; } = new List<WebSocketConnection>();
+        protected Action<string> Log { get; } = data => Console.WriteLine(data);
 
         public async Task StartServer()
         {
-            await WebSocketServer.Server(p2p_port, connection => ServerSetup(connection));
+            await WebSocketServer.Server(p2p_port, async connection => await ServerSetup(connection));
         }
 
-        private void ServerSetup(WebSocketConnection connection)
+        private async Task ServerSetup(WebSocketConnection connection)
         {
             Sockets.Add(connection);
             connection.onMessage = async (data) =>
             {
+                Log($"[Message]: {data}");
                 await connection.SendAsync(Resolve(data));
             };
-            connection.onClose = () => Sockets.Remove(connection);
-            connection.onError = () => Sockets.Remove(connection);
+            connection.onClose = () =>
+            {
+                Log($"[Closing connection]: {connection}");
+                Sockets.Remove(connection);
+            };
+            connection.onError = () =>
+            {
+                Log($"[Error! Closing connection]: {connection}");
+                Sockets.Remove(connection);
+            };
+
+            Log("[Sending message] Connected");
+            await connection.SendAsync("Connected");
         }
 
         public abstract string Resolve(string data);

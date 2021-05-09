@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace TPUM_2021.GraphicalData.ViewModel
+namespace TPUM_2021.ClientGraphicalData.ViewModel
 {
     public class BaseViewModel : INotifyPropertyChanged
     {

@@ -38,23 +38,44 @@ namespace TPUM_2021.ServerPresentation
 
             if (parameters[0].Equals("Product"))
             {
-                if (parameters[1].Equals("GetAvailable"))
+                if (parameters[1].Equals("Get") && parameters[2].Equals(string.Empty))
                 {
-                    List<ProductDto> products = new List<ProductDto>(_ProductQuery.GetAvailableProducts());
+                    List<ProductDto> customers = new List<ProductDto>(_ProductQuery.GetAll());
 
-                    return Serialize(typeof(List<ProductDto>), products);
+                    return Serialize(typeof(List<ProductDto>), customers);
                 }
+
+                //if (parameters[1].Equals("GetAvailable"))
+                //{
+                //    List<ProductDto> products = new List<ProductDto>(_ProductQuery.GetAvailableProducts());
+
+                //    return Serialize(typeof(List<ProductDto>), products);
+                //}
                 
-                if (parameters[1].Equals("GetByCustomerId"))
-                {
-                    List<ProductDto> products = new List<ProductDto>(_ProductQuery.GetProductsByCustomerId(int.Parse(parameters[2])));
+                //if (parameters[1].Equals("GetByCustomerId"))
+                //{
+                //    List<ProductDto> products = new List<ProductDto>(_ProductQuery.GetProductsByCustomerId(int.Parse(parameters[2])));
 
-                    return Serialize(typeof(List<ProductDto>), products);
-                }
+                //    return Serialize(typeof(List<ProductDto>), products);
+                //}
 
                 if (parameters[1].Equals("Update"))
                 {
                     _ProductCommand.Update(int.Parse(parameters[2]), Deserialize<ProductDto>(data));
+
+                    return string.Empty;
+                }
+
+                if (parameters[1].Equals("Delete"))
+                {
+                    _ProductCommand.Delete(Deserialize<ProductDto>(data));
+
+                    return string.Empty;
+                }
+
+                if (parameters[1].Equals("Insert"))
+                {
+                    _ProductCommand.Insert(Deserialize<ProductDto>(data));
 
                     return string.Empty;
                 }

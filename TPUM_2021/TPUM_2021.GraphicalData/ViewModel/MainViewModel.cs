@@ -6,15 +6,17 @@ using System.Reactive.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Input;
-using TPUM_2021.Logic;
+using TPUM_2021.ClientLogic;
+using TPUM_2021.CommonLogic;
 
-namespace TPUM_2021.GraphicalData.ViewModel
+namespace TPUM_2021.ClientGraphicalData.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
         public ICommand BuyCommand { get; set; }
         public ICommand AddSomeProductsCommand { get; set; }
         public ICommand SerializeCommand { get; set; }
+        public ICommand ConnectCommand { get; set; }
 
 
         private ObservableCollection<ProductDto> _Products;
@@ -123,6 +125,7 @@ namespace TPUM_2021.GraphicalData.ViewModel
             BuyCommand = new RelayCommand(BuyCurrentProduct);
             AddSomeProductsCommand = new RelayCommand(SetTimer);
             SerializeCommand = new RelayCommand(SerializeFunction);
+            ConnectCommand = new RelayCommand(ConnectClient);
 
             _Customers = new ObservableCollection<CustomerDto>(_CustomerQuery.GetAll());
             _CurrentCustomer = Customers[0];
@@ -137,6 +140,11 @@ namespace TPUM_2021.GraphicalData.ViewModel
             XmlSerializer xml = new XmlSerializer(Products);
             SerializationManager serializationManager = new SerializationManager(xml);
             serializationManager.Serialize();
+        }
+
+        private async void ConnectClient()
+        {
+            await LogicFactory.ConnectClient();
         }
 
         public void SetTimer()
