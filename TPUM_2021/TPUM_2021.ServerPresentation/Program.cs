@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace TPUM_2021.ServerPresentation
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            using MainController controller = new MainController();
+            await controller.StartServer();
+            
+            Console.ReadLine();
         }
     }
 }
