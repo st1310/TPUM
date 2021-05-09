@@ -2,11 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using TPUM_2021.Data.Model;
+using TPUM_2021.CommonData;
+using TPUM_2021.CommonData.Model;
 
 [assembly: InternalsVisibleTo("TPUM_2021.Test")]
 
-namespace TPUM_2021.Data
+namespace TPUM_2021.ServerData
 {
     internal class AppContext
     {

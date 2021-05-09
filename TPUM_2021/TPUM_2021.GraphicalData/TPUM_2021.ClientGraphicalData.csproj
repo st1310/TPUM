@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Model\**" />
+	  <EmbeddedResource Remove="Model\**" />
+	  <None Remove="Model\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\TPUM_2021.Logic\TPUM_2021.ServerLogic.csproj" />
+	</ItemGroup>
+
+</Project>

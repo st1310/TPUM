@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
+using TPUM_2021.CommonData;
 
 [assembly: InternalsVisibleTo("TPUM_2021.Test")]
 [assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 
-namespace TPUM_2021.Data
+namespace TPUM_2021.ServerData
 {
     internal class Repository : IRepository
     {
