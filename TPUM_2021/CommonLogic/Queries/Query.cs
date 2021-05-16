@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using TPUM_2021.CommonData;
 
 namespace TPUM_2021.CommonLogic
@@ -27,6 +28,13 @@ namespace TPUM_2021.CommonLogic
         public virtual IEnumerable<TEntityDto> GetAll()
         {
             IEnumerable<TEntity> entities = _repository.Get<TEntity>();
+
+            return entities.Select(x => _mapper.Map<TEntity, TEntityDto>(x)).ToList();
+        }
+
+        public virtual async Task<IEnumerable<TEntityDto>> GetAllAsync()
+        {
+            IEnumerable<TEntity> entities = await _repository.GetAsync<TEntity>();
 
             return entities.Select(x => _mapper.Map<TEntity, TEntityDto>(x)).ToList();
         }

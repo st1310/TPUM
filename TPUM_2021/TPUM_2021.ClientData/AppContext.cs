@@ -31,7 +31,7 @@ namespace TPUM_2021.ClientData
                 { typeof(IInvoice), typeof(Invoice) }
             };
 
-            //ConnectClient().Wait();
+            Task.Factory.StartNew(() => ConnectClient());
         }
 
         protected readonly int p2p_port;
@@ -45,7 +45,7 @@ namespace TPUM_2021.ClientData
             connection = await WebSocketClient.Connect(Peer, message => Log = message);
             connection.onMessage = data =>
             {
-                foreach (IObserver<string> observer in observers)
+                foreach (IObserver<string> observer in observers.ToArray())
                 {
                     observer.OnNext(data);
                     observer.OnCompleted();
@@ -87,15 +87,15 @@ namespace TPUM_2021.ClientData
 
             if (dataType == typeof(Customer))
             {
-                serializer = new DataContractJsonSerializer(typeof(List<Customer>));
+                serializer = new DataContractJsonSerializer(typeof(List<Customer>)); // TOut
             }
             else if (dataType == typeof(Product))
             {
-                serializer = new DataContractJsonSerializer(typeof(List<Product>));
+                serializer = new DataContractJsonSerializer(typeof(List<Product>)); // TOut
             }
             else if (dataType == typeof(Invoice))
             {
-                serializer = new DataContractJsonSerializer(typeof(List<Invoice>));
+                serializer = new DataContractJsonSerializer(typeof(List<Invoice>)); // TOut
             }
             else
             {

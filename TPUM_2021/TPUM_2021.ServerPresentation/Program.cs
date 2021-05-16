@@ -11,6 +11,7 @@ namespace TPUM_2021.ServerPresentation
             await controller.StartServer();
             
             Console.ReadLine();
+            Console.ReadLine();
         }
     }
 }

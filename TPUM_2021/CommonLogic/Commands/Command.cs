@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using TPUM_2021.CommonData;
 
 namespace TPUM_2021.CommonLogic
@@ -40,6 +41,11 @@ namespace TPUM_2021.CommonLogic
         }
 
         public virtual void Update(int id, TEntityDto entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual async Task UpdateAsync(int id, TEntityDto entity)
         {
             throw new NotImplementedException();
         }

@@ -17,7 +17,7 @@ namespace TPUM_2021.ClientData
         {
             get
             {
-                _context = new AppContext();
+                _context ??= new AppContext();
                 return _context;
             }
 

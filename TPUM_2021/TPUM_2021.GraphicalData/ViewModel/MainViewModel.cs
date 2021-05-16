@@ -126,13 +126,6 @@ namespace TPUM_2021.ClientGraphicalData.ViewModel
             AddSomeProductsCommand = new RelayCommand(SetTimer);
             SerializeCommand = new RelayCommand(SerializeFunction);
             ConnectCommand = new RelayCommand(ConnectClient);
-
-            _Customers = new ObservableCollection<CustomerDto>(_CustomerQuery.GetAll());
-            _CurrentCustomer = Customers[0];
-
-            _Products = new ObservableCollection<ProductDto>(_ProductQuery.GetAvailableProducts());
-            _CustomerProducts = new ObservableCollection<ProductDto>(_ProductQuery.GetProductsByCustomerId(_CurrentCustomer.Id));
-            _CurrentProduct = Products[0];
         }
 
         private void SerializeFunction()
@@ -144,7 +137,14 @@ namespace TPUM_2021.ClientGraphicalData.ViewModel
 
         private async void ConnectClient()
         {
-            await LogicFactory.ConnectClient();
+            //await LogicFactory.ConnectClient();
+
+            Customers = new ObservableCollection<CustomerDto>(await _CustomerQuery.GetAllAsync());
+            CurrentCustomer = Customers[0];
+
+            Products = new ObservableCollection<ProductDto>(await _ProductQuery.GetAvailableProductsAsync());
+            CustomerProducts = new ObservableCollection<ProductDto>(await _ProductQuery.GetProductsByCustomerIdAsync(_CurrentCustomer.Id));
+            CurrentProduct = Products[0];
         }
 
         public void SetTimer()
@@ -178,16 +178,16 @@ namespace TPUM_2021.ClientGraphicalData.ViewModel
             Products = new ObservableCollection<ProductDto>(productsTemp);
         }
 
-        public void BuyCurrentProduct()
+        public async void BuyCurrentProduct()
         {
             if (CurrentProduct == null)
                 return;
 
             CurrentProduct.CustomerId = CurrentCustomer.Id;
-            _ProductCommand.Update(CurrentProduct.Id, CurrentProduct);
+            await _ProductCommand.UpdateAsync(CurrentProduct.Id, CurrentProduct);
 
-            Products = new ObservableCollection<ProductDto>(_ProductQuery.GetAvailableProducts());
-            CustomerProducts = new ObservableCollection<ProductDto>(_ProductQuery.GetProductsByCustomerId(_CurrentCustomer.Id));
+            Products = new ObservableCollection<ProductDto>(await _ProductQuery.GetAvailableProductsAsync());
+            CustomerProducts = new ObservableCollection<ProductDto>(await _ProductQuery.GetProductsByCustomerIdAsync(_CurrentCustomer.Id));
         }
     }
 }

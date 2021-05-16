@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TPUM_2021.CommonLogic;
 using TPUM_2021.CommonWebSocketApi;
+using TPUM_2021.ServerLogic;
 
 namespace TPUM_2021.ServerPresentation
 {
@@ -19,7 +20,9 @@ namespace TPUM_2021.ServerPresentation
 
         public MainController(int p2p_port = 8081) : base(p2p_port)
         {
-
+            _ProductQuery = LogicFactory.ProductQuery;
+            _CustomerQuery = LogicFactory.CustomerQuery;
+            _ProductCommand = LogicFactory.ProductCommand;
         }
 
         public override string Resolve(string data)
@@ -61,21 +64,22 @@ namespace TPUM_2021.ServerPresentation
 
                 if (parameters[1].Equals("Update"))
                 {
-                    _ProductCommand.Update(int.Parse(parameters[2]), Deserialize<ProductDto>(data));
+                    _ProductCommand.Update(int.Parse(parameters[2]), 
+                        Deserialize<ProductDto>(data.Replace($"{parameters[0]}:{parameters[1]}:{parameters[2]}:", "")));
 
                     return string.Empty;
                 }
 
                 if (parameters[1].Equals("Delete"))
                 {
-                    _ProductCommand.Delete(Deserialize<ProductDto>(data));
+                    _ProductCommand.Delete(Deserialize<ProductDto>(data.Replace($"{parameters[0]}:{parameters[1]}:", "")));
 
                     return string.Empty;
                 }
 
                 if (parameters[1].Equals("Insert"))
                 {
-                    _ProductCommand.Insert(Deserialize<ProductDto>(data));
+                    _ProductCommand.Insert(Deserialize<ProductDto>(data.Replace($"{parameters[0]}:{parameters[1]}:", "")));
 
                     return string.Empty;
                 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using TPUM_2021.ClientData;
 using TPUM_2021.CommonData;
 using TPUM_2021.CommonLogic;
@@ -31,6 +32,20 @@ namespace TPUM_2021.ClientLogic
         public IEnumerable<ProductDto> GetProductsByCustomerId(int id)
         {
             IEnumerable<IProduct> products = _repository.Get<IProduct>(x => x.CustomerId == id);
+
+            return products.Select(x => _mapper.Map<IProduct, ProductDto>(x)).ToList();
+        }
+
+        public async Task<IEnumerable<ProductDto>> GetAvailableProductsAsync()
+        {
+            IEnumerable<IProduct> products = await _repository.GetAsync<IProduct>(x => x.CustomerId == null || x.CustomerId == 0);
+
+            return products.Select(x => _mapper.Map<IProduct, ProductDto>(x)).ToList();
+        }
+
+        public async Task<IEnumerable<ProductDto>> GetProductsByCustomerIdAsync(int id)
+        {
+            IEnumerable<IProduct> products = await _repository.GetAsync<IProduct>(x => x.CustomerId == id);
 
             return products.Select(x => _mapper.Map<IProduct, ProductDto>(x)).ToList();
         }

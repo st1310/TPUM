@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using TPUM_2021.ClientData;
 using TPUM_2021.CommonData;
 using TPUM_2021.CommonLogic;
@@ -29,6 +30,21 @@ namespace TPUM_2021.ClientLogic
             product.CustomerId = entity.CustomerId;
 
             _repository.Insert(product);
+        }
+
+        public override async Task UpdateAsync(int id, ProductDto entity)
+        {
+            IProduct obj = (await _repository.GetAsync<IProduct>(x => x.Id == id)).FirstOrDefault();
+
+            await _repository.DeleteAsync(obj);
+
+            var product = DataFactory.GetProduct;
+            product.Id = entity.Id;
+            product.Name = entity.Name;
+            product.Price = entity.Price;
+            product.CustomerId = entity.CustomerId;
+
+            await _repository.InsertAsync(product);
         }
     }
 }
