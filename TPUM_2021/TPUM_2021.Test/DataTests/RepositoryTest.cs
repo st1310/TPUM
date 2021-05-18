@@ -19,12 +19,6 @@ namespace TPUM_2021.Test.DataTests
             new Product {Id = 3, CustomerId = null, Name = "p3", Price = 3}
         };
 
-        private static readonly Product[] _insertProductsList = new Product[]
-        {
-            new Product {Id = 4, CustomerId = null, Name = "p4", Price = 4},
-            new Product {Id = 5, CustomerId = null, Name = "p5", Price = 5},
-        };
-
         private static readonly object[] _deleteProductsTestTestSource =
         {
             new TestCaseData(
@@ -51,24 +45,6 @@ namespace TPUM_2021.Test.DataTests
                 _threeProductsList,
                 false)
                 .SetName("DeleteNoProducts_ListOfProducts_IndicesToDelete_ResultList_NoException")
-        };
-
-        private static readonly object[] _insertProductsTestTestSource =
-        {
-            new TestCaseData(
-                _threeProductsList,
-                _insertProductsList,
-                new int[] {0},
-                new Product[]{ _threeProductsList[0], _threeProductsList[1], _threeProductsList[2], _insertProductsList[0] },
-                false)
-                .SetName("InsertProduct_ListOfProducts_IndexToDelete_ResultList_NoException"),
-            new TestCaseData(
-                _threeProductsList,
-                _insertProductsList,
-                new int[] {0, 1},
-                new Product[]{ _threeProductsList[0], _threeProductsList[1], _threeProductsList[2], _insertProductsList[0], _insertProductsList[1] },
-                false)
-                .SetName("InsertTwoProduct_ListOfProducts_IndexToDelete_ResultList_NoException"),
         };
 
         [TestCaseSource(nameof(_deleteProductsTestTestSource))]
@@ -98,6 +74,30 @@ namespace TPUM_2021.Test.DataTests
             Assert.IsTrue(context[typeof(Product)].SequenceEqual(expectedResult));
         }
 
+        private static readonly Product[] _insertProductsList = new Product[]
+        {
+            new Product {Id = 4, CustomerId = null, Name = "p4", Price = 4},
+            new Product {Id = 5, CustomerId = null, Name = "p5", Price = 5},
+        };
+
+        private static readonly object[] _insertProductsTestTestSource =
+        {
+            new TestCaseData(
+                _threeProductsList,
+                _insertProductsList,
+                new int[] {0},
+                new Product[]{ _threeProductsList[0], _threeProductsList[1], _threeProductsList[2], _insertProductsList[0] },
+                false)
+                .SetName("InsertProduct_ListOfProducts_IndexToDelete_ResultList_NoException"),
+            new TestCaseData(
+                _threeProductsList,
+                _insertProductsList,
+                new int[] {0, 1},
+                new Product[]{ _threeProductsList[0], _threeProductsList[1], _threeProductsList[2], _insertProductsList[0], _insertProductsList[1] },
+                false)
+                .SetName("InsertTwoProducts_ListOfProducts_IndexToInsert_ResultList_NoException"),
+        };
+
         [TestCaseSource(nameof(_insertProductsTestTestSource))]
         public void InsertProductsTest(Product[] products, Product[] insertProducts, int[] indices, Product[] expectedResult, bool exceptionExpected)
         {
@@ -112,7 +112,7 @@ namespace TPUM_2021.Test.DataTests
             {
                 foreach (int index in indices)
                 {
-                    repositoryMock.Object.Insert<Product>(_insertProductsList[index]);
+                    repositoryMock.Object.Insert<Product>(insertProducts[index]);
                 }
             }
             catch (InvalidOperationException ex)

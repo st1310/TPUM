@@ -35,7 +35,7 @@ namespace TPUM_2021.ClientTest
                 _threeProductsList,
                 _threeProductsDtoList,
                 false)
-                .SetName("GetAvitableProducts_ListOfProducts_IndexToDelete_ResultList_NoException"),
+                .SetName("GetAvitableProducts_ListOfProducts_ResultList_NoException"),
         };
 
 
@@ -66,8 +66,20 @@ namespace TPUM_2021.ClientTest
 
             // Assert
             Assert.AreEqual(result.ToList().Count, expectedResult.Length);
-            Assert.IsTrue(result.SequenceEqual(expectedResult));
+            Assert.IsTrue(result.SequenceEqual(expectedResult, new ProductDtoEqualityComparer()));
         }
 
+        private class ProductDtoEqualityComparer : IEqualityComparer<ProductDto>
+        {
+            public bool Equals(ProductDto x, ProductDto y)
+            {
+                return x.Id == y.Id && x.Name == y.Name && x.Price == y.Price && x.CustomerId == y.CustomerId;
+            }
+
+            public int GetHashCode(ProductDto obj)
+            {
+                return obj.Id.GetHashCode() ^ obj.Name.GetHashCode() ^ obj.Price.GetHashCode() ^ obj.CustomerId.GetHashCode();
+            }
+        }
     }
 }
