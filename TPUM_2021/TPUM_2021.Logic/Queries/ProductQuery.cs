@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using TPUM_2021.Data;
-using TPUM_2021.Data.Model;
+using System.Threading.Tasks;
+using TPUM_2021.CommonData;
+using TPUM_2021.CommonLogic;
+using TPUM_2021.ServerData;
 
-namespace TPUM_2021.Logic
+namespace TPUM_2021.ServerLogic
 {
     public class ProductQuery : Query<IProduct, ProductDto>, IProductQuery
     {
@@ -26,11 +28,21 @@ namespace TPUM_2021.Logic
             return products.Select(x => _mapper.Map<IProduct, ProductDto>(x)).ToList();
         }
 
+        public Task<IEnumerable<ProductDto>> GetAvailableProductsAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<ProductDto> GetProductsByCustomerId(int id)
         {
             IEnumerable<IProduct> products = _repository.Get<IProduct>(x => x.CustomerId == id);
 
             return products.Select(x => _mapper.Map<IProduct, ProductDto>(x)).ToList();
+        }
+
+        public Task<IEnumerable<ProductDto>> GetProductsByCustomerIdAsync(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

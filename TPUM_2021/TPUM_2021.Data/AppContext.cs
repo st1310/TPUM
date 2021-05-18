@@ -2,11 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using TPUM_2021.Data.Model;
+using TPUM_2021.CommonData;
+using TPUM_2021.CommonData.Model;
 
-[assembly: InternalsVisibleTo("TPUM_2021.Test")]
+[assembly: InternalsVisibleTo("TPUM_2021.ServerTest")]
 
-namespace TPUM_2021.Data
+namespace TPUM_2021.ServerData
 {
     internal class AppContext
     {
@@ -16,21 +17,21 @@ namespace TPUM_2021.Data
         {
             typeListPairs = new Dictionary<Type, IEnumerable<IEntity>>
             {
-                { 
-                    typeof(ICustomer), new List<ICustomer> 
-                    { 
-                        new Customer { Id = 1,Name = "Karol", Funds = 400 } 
-                    } 
+                {
+                    typeof(ICustomer), new List<ICustomer>
+                    {
+                        new Customer { Id = 1,Name = "Karol", Funds = 400 }
+                    }
                 },
-                { 
-                    typeof(IProduct), new List<IProduct> 
-                    { 
-                        new Product { Id = 1, Name = "product1", Price = 10 , CustomerId = null }, 
-                        new Product { Id = 2, Name = "product2", Price = 20 , CustomerId = 1 } 
-                    } 
+                {
+                    typeof(IProduct), new List<IProduct>
+                    {
+                        new Product { Id = 1, Name = "product1", Price = 10 , CustomerId = null },
+                        new Product { Id = 2, Name = "product2", Price = 20 , CustomerId = 1 }
+                    }
                 },
-                { 
-                    typeof(IInvoice), new List<IInvoice>() 
+                {
+                    typeof(IInvoice), new List<IInvoice>()
                 }
             };
         }

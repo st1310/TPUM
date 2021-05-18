@@ -1,26 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TPUM_2021.CommonLogic;
 
-namespace TPUM_2021.Logic
+namespace TPUM_2021.ServerLogic
 {
-    public static class LogicFactory
+    public class LogicFactory : CommonLogicFactory
     {
-        private static Mapper _mapper = null;
-        public static Mapper Mapper
-        {
-            get
-            {
-                _mapper ??= new Mapper();
-                return _mapper ?? new Mapper();
-            }
-
-            set
-            {
-                _mapper = value;
-            }
-        }
-
         private static CustomerQuery _customerQuery = null;
         public static CustomerQuery CustomerQuery
         {

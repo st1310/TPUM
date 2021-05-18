@@ -6,15 +6,17 @@ using System.Reactive.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Input;
-using TPUM_2021.Logic;
+using TPUM_2021.ClientLogic;
+using TPUM_2021.CommonLogic;
 
-namespace TPUM_2021.GraphicalData.ViewModel
+namespace TPUM_2021.ClientGraphicalData.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
         public ICommand BuyCommand { get; set; }
         public ICommand AddSomeProductsCommand { get; set; }
         public ICommand SerializeCommand { get; set; }
+        public ICommand ConnectCommand { get; set; }
 
 
         private ObservableCollection<ProductDto> _Products;
@@ -123,13 +125,7 @@ namespace TPUM_2021.GraphicalData.ViewModel
             BuyCommand = new RelayCommand(BuyCurrentProduct);
             AddSomeProductsCommand = new RelayCommand(SetTimer);
             SerializeCommand = new RelayCommand(SerializeFunction);
-
-            _Customers = new ObservableCollection<CustomerDto>(_CustomerQuery.GetAll());
-            _CurrentCustomer = Customers[0];
-
-            _Products = new ObservableCollection<ProductDto>(_ProductQuery.GetAvailableProducts());
-            _CustomerProducts = new ObservableCollection<ProductDto>(_ProductQuery.GetProductsByCustomerId(_CurrentCustomer.Id));
-            _CurrentProduct = Products[0];
+            ConnectCommand = new RelayCommand(ConnectClient);
         }
 
         private void SerializeFunction()
@@ -137,6 +133,18 @@ namespace TPUM_2021.GraphicalData.ViewModel
             XmlSerializer xml = new XmlSerializer(Products);
             SerializationManager serializationManager = new SerializationManager(xml);
             serializationManager.Serialize();
+        }
+
+        private async void ConnectClient()
+        {
+            //await LogicFactory.ConnectClient();
+
+            Customers = new ObservableCollection<CustomerDto>(await _CustomerQuery.GetAllAsync());
+            CurrentCustomer = Customers[0];
+
+            Products = new ObservableCollection<ProductDto>(await _ProductQuery.GetAvailableProductsAsync());
+            CustomerProducts = new ObservableCollection<ProductDto>(await _ProductQuery.GetProductsByCustomerIdAsync(_CurrentCustomer.Id));
+            CurrentProduct = Products[0];
         }
 
         public void SetTimer()
@@ -170,16 +178,16 @@ namespace TPUM_2021.GraphicalData.ViewModel
             Products = new ObservableCollection<ProductDto>(productsTemp);
         }
 
-        public void BuyCurrentProduct()
+        public async void BuyCurrentProduct()
         {
             if (CurrentProduct == null)
                 return;
 
             CurrentProduct.CustomerId = CurrentCustomer.Id;
-            _ProductCommand.Update(CurrentProduct.Id, CurrentProduct);
+            await _ProductCommand.UpdateAsync(CurrentProduct.Id, CurrentProduct);
 
-            Products = new ObservableCollection<ProductDto>(_ProductQuery.GetAvailableProducts());
-            CustomerProducts = new ObservableCollection<ProductDto>(_ProductQuery.GetProductsByCustomerId(_CurrentCustomer.Id));
+            Products = new ObservableCollection<ProductDto>(await _ProductQuery.GetAvailableProductsAsync());
+            CustomerProducts = new ObservableCollection<ProductDto>(await _ProductQuery.GetProductsByCustomerIdAsync(_CurrentCustomer.Id));
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 
-namespace TPUM_2021.GraphicalData.ViewModel
+namespace TPUM_2021.ClientGraphicalData.ViewModel
 {
     public class RelayCommand : ICommand
     {

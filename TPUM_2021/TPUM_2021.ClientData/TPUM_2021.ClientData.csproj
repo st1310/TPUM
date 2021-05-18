@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CommonData\TPUM_2021.CommonData.csproj" />
+    <ProjectReference Include="..\CommonWebSocketApi\TPUM_2021.CommonWebSocketApi.csproj" />
+  </ItemGroup>
+
+</Project>

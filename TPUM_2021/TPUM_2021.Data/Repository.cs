@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using TPUM_2021.CommonData;
 
-[assembly: InternalsVisibleTo("TPUM_2021.Test")]
+[assembly: InternalsVisibleTo("TPUM_2021.ServerTest")]
 [assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 
-namespace TPUM_2021.Data
+namespace TPUM_2021.ServerData
 {
     internal class Repository : IRepository
     {
@@ -25,6 +27,11 @@ namespace TPUM_2021.Data
             {
                 ((List<TEntity>)_context[GetEntityType<TEntity>()]).Remove(entity);
             }
+        }
+
+        public Task DeleteAsync<TEntity>(TEntity entity) where TEntity : IEntity
+        {
+            throw new NotImplementedException();
         }
 
         public virtual void Delete<TEntity>(object id) where TEntity : IEntity
@@ -49,6 +56,11 @@ namespace TPUM_2021.Data
             }
         }
 
+        public Task<IEnumerable<TEntity>> GetAsync<TEntity>(Expression<Func<TEntity, bool>> filter = null) where TEntity : IEntity
+        {
+            throw new NotImplementedException();
+        }
+
         public virtual TEntity GetById<TEntity>(object id) where TEntity : IEntity
         {
             lock (_lock)
@@ -63,6 +75,11 @@ namespace TPUM_2021.Data
             {
                 ((List<TEntity>)_context[GetEntityType<TEntity>()]).Add(entity);
             }
+        }
+
+        public Task InsertAsync<TEntity>(TEntity entity) where TEntity : IEntity
+        {
+            throw new NotImplementedException();
         }
 
         public virtual void InsertRange<TEntity>(IEnumerable<TEntity> entities) where TEntity : IEntity

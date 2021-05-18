@@ -12,10 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TPUM_2021.GraphicalData.ViewModel;
-using TPUM_2021.Logic;
+using TPUM_2021.ClientGraphicalData.ViewModel;
 
-namespace TPUM_2021.View
+namespace TPUM_2021.ClientView
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
