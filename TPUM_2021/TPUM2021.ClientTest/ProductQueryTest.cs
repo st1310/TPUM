@@ -4,8 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
+using TPUM_2021.ClientLogic;
 using TPUM_2021.CommonData;
 using TPUM_2021.CommonData.Model;
+using TPUM_2021.CommonLogic;
 
 namespace TPUM_2021.ClientTest
 {
@@ -19,52 +22,42 @@ namespace TPUM_2021.ClientTest
             new Product {Id = 3, CustomerId = null, Name = "p3", Price = 3}
         };
 
-        private static readonly object[] _deleteProductsTestTestSource =
+        private static readonly ProductDto[] _threeProductsDtoList = new ProductDto[]
+        {
+            new ProductDto {Id = 1, CustomerId = null, Name = "p1", Price = 1},
+            new ProductDto {Id = 2, CustomerId = null, Name = "p2", Price = 2},
+            new ProductDto {Id = 3, CustomerId = null, Name = "p3", Price = 3}
+        };
+
+        private static readonly object[] _productQueryTestTestSource =
         {
             new TestCaseData(
                 _threeProductsList,
-                new int[] { 3 },
-                new Product[]{ _threeProductsList[0], _threeProductsList[1] },
+                _threeProductsDtoList,
                 false)
-                .SetName("DeleteTheLastProduct_ListOfProducts_IndexToDelete_ResultList_NoException"),
-            new TestCaseData(
-                _threeProductsList,
-                new int[] { 4 },
-                _threeProductsList,
-                true)
-                .SetName("DeleteProductNotInTheList_ListOfProducts_IndexToDelete_ResultList_Exception"),
-            new TestCaseData(
-                _threeProductsList,
-                new int[] { 1, 2, 3 },
-                new Product[] { },
-                false)
-                .SetName("DeleteAllProducts_ListOfProducts_IndicesToDelete_ResultList_NoException"),
-            new TestCaseData(
-                _threeProductsList,
-                new int[] { },
-                _threeProductsList,
-                false)
-                .SetName("DeleteNoProducts_ListOfProducts_IndicesToDelete_ResultList_NoException")
+                .SetName("GetAvitableProducts_ListOfProducts_IndexToDelete_ResultList_NoException"),
         };
 
 
 
-        [TestCaseSource(nameof(_deleteProductsTestTestSource))]
-        public void DeleteProductsTest(Product[] products, int[] indices, Product[] expectedResult, bool exceptionExpected)
+        [TestCaseSource(nameof(_productQueryTestTestSource))]
+        public void GetProductQueryTest(Product[] products, ProductDto[] expectedResult, bool exceptionExpected)
         {
             // Arrange
 
-            var repositoryMock = new Mock<ClientData.Repository>();
+            var repositoryMock = new Mock<ClientData.Repository>(null);
 
-            repositoryMock.Setup(m => m.GetAsync<It.IsAnyType>(It.IsAny<It.IsAnyType>())).Returns(products);
+            IEnumerable<ProductDto> result = null;
+
+            repositoryMock.Setup(m => m.GetAsync<IProduct>(It.IsAny<Expression<Func<IProduct, bool>>>())).Returns(Task.FromResult(products.AsEnumerable<IProduct>()));
+
+            var productQueryMock = new Mock<ProductQuery>(new Mapper(), repositoryMock.Object);
+
 
             // Act
             try
             {
-                foreach (int index in indices)
-                {
-                    repositoryMock.Object.Delete<Product>(index);
-                }
+                result = productQueryMock.Object.GetAvailableProductsAsync().Result;
             }
             catch (InvalidOperationException ex)
             {
@@ -72,8 +65,8 @@ namespace TPUM_2021.ClientTest
             }
 
             // Assert
-            Assert.AreEqual(context[typeof(Product)].ToList().Count, expectedResult.Length);
-            Assert.IsTrue(context[typeof(Product)].SequenceEqual(expectedResult));
+            Assert.AreEqual(result.ToList().Count, expectedResult.Length);
+            Assert.IsTrue(result.SequenceEqual(expectedResult));
         }
 
     }

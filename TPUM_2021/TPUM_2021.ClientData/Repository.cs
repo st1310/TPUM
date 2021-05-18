@@ -6,8 +6,8 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using TPUM_2021.CommonData;
 
-[assembly: InternalsVisibleTo("TPUM_2021.Test")]
 [assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
+[assembly: InternalsVisibleTo("TPUM_2021.ClientTest")]
 
 namespace TPUM_2021.ClientData
 {

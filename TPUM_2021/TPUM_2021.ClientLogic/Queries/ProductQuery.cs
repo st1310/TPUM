@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using TPUM_2021.ClientData;
@@ -8,8 +9,11 @@ using TPUM_2021.CommonData;
 using TPUM_2021.CommonLogic;
 using TPUM_2021.ServerData;
 
+[assembly: InternalsVisibleTo("TPUM_2021.ClientTest")]
+
 namespace TPUM_2021.ClientLogic
 {
+
     public class ProductQuery : Query<IProduct, ProductDto>, IProductQuery
     {
         public ProductQuery() : base(DataFactory.ProductRepository)

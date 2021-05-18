@@ -33,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TPUM_2021.ClientData", "TPU
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientPresentation", "ClientPresentation", "{AE131949-7DBE-4CEF-B879-911A715E63F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPUM2021.ClientTest", "TPUM2021.ClientTest\TPUM2021.ClientTest.csproj", "{E83E1976-91AE-4786-8A6F-548CAF11E76F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPUM_2021.ClientTest", "TPUM2021.ClientTest\TPUM_2021.ClientTest.csproj", "{E83E1976-91AE-4786-8A6F-548CAF11E76F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
