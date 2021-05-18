@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 
 [assembly: InternalsVisibleTo("TPUM_2021.ServerTest")]
+[assembly: InternalsVisibleTo("TPUM_2021.ClientTest")]
 [assembly: InternalsVisibleTo("TPUM_2021.ServerData")]
 [assembly: InternalsVisibleTo("TPUM_2021.ClientData")]
 

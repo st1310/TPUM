@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using TPUM_2021.CommonData;
 
-[assembly: InternalsVisibleTo("TPUM_2021.Test")]
+[assembly: InternalsVisibleTo("TPUM_2021.ServerTest")]
 [assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 
 namespace TPUM_2021.ServerData
