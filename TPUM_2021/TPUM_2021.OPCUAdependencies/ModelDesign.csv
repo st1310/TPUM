@@ -1,0 +1,15 @@
+CustomerS,15001,ObjectType
+CustomerS_Id,15002,Variable
+CustomerS_Name,15003,Variable
+CustomerS_Funds,15004,Variable
+InvoiceS,15005,ObjectType
+InvoiceS_Id,15006,Variable
+InvoiceS_ProductId,15007,Variable
+InvoiceS_CustomerId,15008,Variable
+InvoiceS_Date,15009,Variable
+InvoiceS_Price,15010,Variable
+ProductS,15011,ObjectType
+ProductS_Id,15012,Variable
+ProductS_Name,15013,Variable
+ProductS_Price,15014,Variable
+ProductS_CustomerId,15015,Variable
