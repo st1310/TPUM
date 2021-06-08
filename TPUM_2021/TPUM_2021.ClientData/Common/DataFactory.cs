@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using TPUM_2021.CommonData;
-using TPUM_2021.CommonData.Model;
-using TPUM_2021.ServerData;
 
 namespace TPUM_2021.ClientData
 {

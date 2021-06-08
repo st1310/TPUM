@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CommonData\TPUM_2021.CommonData.csproj" />
     <ProjectReference Include="..\CommonWebSocketApi\TPUM_2021.CommonWebSocketApi.csproj" />
   </ItemGroup>
 

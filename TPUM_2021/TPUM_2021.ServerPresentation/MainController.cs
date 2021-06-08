@@ -5,8 +5,8 @@ using System.Linq;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
-using TPUM_2021.CommonLogic;
 using TPUM_2021.CommonWebSocketApi;
+using TPUM_2021.OPCUAdependencies.Model;
 using TPUM_2021.ServerLogic;
 
 namespace TPUM_2021.ServerPresentation
@@ -33,9 +33,9 @@ namespace TPUM_2021.ServerPresentation
             {
                 if (parameters[1].Equals("Get") && parameters[2].Equals(string.Empty))
                 {
-                    List<CustomerDto> customers = new List<CustomerDto>(_CustomerQuery.GetAll());
+                    List<CustomerS> customers = new List<CustomerDto>(_CustomerQuery.GetAll()).Select(x => Map<CustomerDto>(x) as CustomerS).ToList();
 
-                    return Serialize(typeof(List<CustomerDto>), customers);
+                    return Serialize(typeof(List<CustomerS>), customers);
                 }
             }
 
@@ -43,49 +43,35 @@ namespace TPUM_2021.ServerPresentation
             {
                 if (parameters[1].Equals("Get") && parameters[2].Equals(string.Empty))
                 {
-                    List<ProductDto> customers = new List<ProductDto>(_ProductQuery.GetAll());
+                    List<ProductS> customers = new List<ProductDto>(_ProductQuery.GetAll()).Select(x => Map<ProductDto>(x) as ProductS).ToList();
 
-                    return Serialize(typeof(List<ProductDto>), customers);
+                    return Serialize(typeof(List<ProductS>), customers);
                 }
-
-                //if (parameters[1].Equals("GetAvailable"))
-                //{
-                //    List<ProductDto> products = new List<ProductDto>(_ProductQuery.GetAvailableProducts());
-
-                //    return Serialize(typeof(List<ProductDto>), products);
-                //}
-                
-                //if (parameters[1].Equals("GetByCustomerId"))
-                //{
-                //    List<ProductDto> products = new List<ProductDto>(_ProductQuery.GetProductsByCustomerId(int.Parse(parameters[2])));
-
-                //    return Serialize(typeof(List<ProductDto>), products);
-                //}
 
                 if (parameters[1].Equals("Update"))
                 {
-                    _ProductCommand.Update(int.Parse(parameters[2]), 
-                        Deserialize<ProductDto>(data.Replace($"{parameters[0]}:{parameters[1]}:{parameters[2]}:", "")));
+                    _ProductCommand.Update(int.Parse(parameters[2]),
+                        Map<ProductS>(Deserialize<ProductS>(data.Replace($"{parameters[0]}:{parameters[1]}:{parameters[2]}:", ""))) as ProductDto);
 
                     return string.Empty;
                 }
 
                 if (parameters[1].Equals("Delete"))
                 {
-                    _ProductCommand.Delete(Deserialize<ProductDto>(data.Replace($"{parameters[0]}:{parameters[1]}:", "")));
+                    _ProductCommand.Delete(Map<ProductS>(Deserialize<ProductS>(data.Replace($"{parameters[0]}:{parameters[1]}:", ""))) as ProductDto);
 
                     return string.Empty;
                 }
 
                 if (parameters[1].Equals("Insert"))
                 {
-                    _ProductCommand.Insert(Deserialize<ProductDto>(data.Replace($"{parameters[0]}:{parameters[1]}:", "")));
+                    _ProductCommand.Insert(Map<ProductS>(Deserialize<ProductS>(data.Replace($"{parameters[0]}:{parameters[1]}:", ""))) as ProductDto);
 
                     return string.Empty;
                 }
             }
 
-            throw new NotImplementedException();
+            throw new ArgumentOutOfRangeException();
         }
 
         private string Serialize(Type type, object obj)
@@ -108,6 +94,57 @@ namespace TPUM_2021.ServerPresentation
             DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(TOut));
 
             return serializer.ReadObject(stream) as TOut;
+        }
+
+        private object Map<TIn>(object obj)
+        {
+            if (typeof(TIn) == typeof(CustomerDto))
+            {
+                CustomerDto tmp = obj as CustomerDto;
+                return new CustomerS
+                {
+                    Id = tmp.Id,
+                    Name = tmp.Name,
+                    Funds = tmp.Funds
+                };
+            }
+            
+            if(typeof(TIn) == typeof(ProductDto))
+            {
+                ProductDto tmp = obj as ProductDto;
+                return new ProductS
+                {
+                    Id = tmp.Id,
+                    Name = tmp.Name,
+                    CustomerId = tmp.CustomerId,
+                    Price = tmp.Price
+                };
+            }
+
+            if (typeof(TIn) == typeof(CustomerS))
+            {
+                CustomerS tmp = obj as CustomerS;
+                return new CustomerDto
+                {
+                    Id = tmp.Id,
+                    Name = tmp.Name,
+                    Funds = tmp.Funds
+                };
+            }
+
+            if (typeof(TIn) == typeof(ProductS))
+            {
+                ProductS tmp = obj as ProductS;
+                return new ProductDto
+                {
+                    Id = tmp.Id,
+                    Name = tmp.Name,
+                    CustomerId = tmp.CustomerId,
+                    Price = tmp.Price
+                };
+            }
+
+            throw new ArgumentOutOfRangeException();
         }
 
         public override void Dispose()

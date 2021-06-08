@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading;
 using System.Windows.Input;
 using TPUM_2021.ClientLogic;
-using TPUM_2021.CommonLogic;
 
 namespace TPUM_2021.ClientGraphicalData.ViewModel
 {

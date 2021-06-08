@@ -4,9 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TPUM_2021.ClientData;
-using TPUM_2021.CommonData;
-using TPUM_2021.CommonLogic;
-using TPUM_2021.ServerData;
 
 namespace TPUM_2021.ClientLogic
 {

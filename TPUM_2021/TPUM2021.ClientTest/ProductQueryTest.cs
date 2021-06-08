@@ -5,10 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using TPUM_2021.ClientData;
 using TPUM_2021.ClientLogic;
-using TPUM_2021.CommonData;
-using TPUM_2021.CommonData.Model;
-using TPUM_2021.CommonLogic;
 
 namespace TPUM_2021.ClientTest
 {
