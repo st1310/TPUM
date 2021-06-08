@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <UANodeSet xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd">
+  <NamespaceUris>
+    <Uri>http://cas.eu/UA/CommServer/</Uri>
+  </NamespaceUris>
   <Models>
     <Model ModelUri="http://cas.eu/UA/CommServer/">
       <RequiredModel ModelUri="http://opcfoundation.org/UA/" Version="1.04" PublicationDate="2016-12-31T00:00:00Z" />
@@ -42,88 +45,88 @@
     <Alias Alias="HasEncoding">i=38</Alias>
     <Alias Alias="HasDescription">i=39</Alias>
   </Aliases>
-  <UAObjectType NodeId="i=3" BrowseName="CustomerS">
+  <UAObjectType NodeId="ns=1;i=3" BrowseName="1:CustomerS">
     <DisplayName>CustomerS</DisplayName>
     <References>
-      <Reference ReferenceType="HasComponent">i=4</Reference>
-      <Reference ReferenceType="HasComponent">i=5</Reference>
-      <Reference ReferenceType="HasComponent">i=6</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=4</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=5</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=6</Reference>
       <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
     </References>
   </UAObjectType>
-  <UAVariable NodeId="i=4" BrowseName="Id" ParentNodeId="Byte" DataType="Int32">
+  <UAVariable NodeId="ns=1;i=4" BrowseName="Id" ParentNodeId="ns=1;i=3" DataType="Int32">
     <DisplayName>Id</DisplayName>
     <References>
       <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
       <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasComponent" IsForward="false">i=3</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=3</Reference>
     </References>
   </UAVariable>
-  <UAVariable NodeId="i=5" BrowseName="Name" ParentNodeId="Byte" DataType="String">
+  <UAVariable NodeId="ns=1;i=5" BrowseName="Name" ParentNodeId="ns=1;i=3" DataType="String" AccessLevel="3">
     <DisplayName>Name</DisplayName>
     <References>
       <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
       <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasComponent" IsForward="false">i=3</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=3</Reference>
     </References>
   </UAVariable>
-  <UAVariable NodeId="i=6" BrowseName="Funds" ParentNodeId="Byte" DataType="i=50">
+  <UAVariable NodeId="ns=1;i=6" BrowseName="Funds" ParentNodeId="ns=1;i=3" DataType="i=50" AccessLevel="3">
     <DisplayName>Funds</DisplayName>
     <References>
       <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
       <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasComponent" IsForward="false">i=3</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=3</Reference>
     </References>
   </UAVariable>
-  <UAObjectType NodeId="i=7" BrowseName="InvoiceS">
+  <UAObjectType NodeId="ns=1;i=7" BrowseName="1:InvoiceS">
     <DisplayName>InvoiceS</DisplayName>
     <References>
-      <Reference ReferenceType="HasComponent">i=8</Reference>
-      <Reference ReferenceType="HasComponent">i=9</Reference>
-      <Reference ReferenceType="HasComponent">i=10</Reference>
-      <Reference ReferenceType="HasComponent">i=11</Reference>
-      <Reference ReferenceType="HasComponent">i=12</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=8</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=9</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=10</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=11</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=12</Reference>
       <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
     </References>
   </UAObjectType>
-  <UAVariable NodeId="i=8" BrowseName="Id" ParentNodeId="UInt32" DataType="Int32">
+  <UAVariable NodeId="ns=1;i=8" BrowseName="Id" ParentNodeId="ns=1;i=7" DataType="Int32" AccessLevel="3">
     <DisplayName>Id</DisplayName>
     <References>
       <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
       <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasComponent" IsForward="false">i=7</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=7</Reference>
     </References>
   </UAVariable>
-  <UAVariable NodeId="i=9" BrowseName="ProductId" ParentNodeId="UInt32" DataType="Int32">
+  <UAVariable NodeId="ns=1;i=9" BrowseName="ProductId" ParentNodeId="ns=1;i=7" DataType="Int32" AccessLevel="3">
     <DisplayName>ProductId</DisplayName>
     <References>
       <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
       <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasComponent" IsForward="false">i=7</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=7</Reference>
     </References>
   </UAVariable>
-  <UAVariable NodeId="i=10" BrowseName="CustomerId" ParentNodeId="UInt32" DataType="Int32">
+  <UAVariable NodeId="ns=1;i=10" BrowseName="CustomerId" ParentNodeId="ns=1;i=7" DataType="Int32" AccessLevel="3">
     <DisplayName>CustomerId</DisplayName>
     <References>
       <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
       <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasComponent" IsForward="false">i=7</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=7</Reference>
     </References>
   </UAVariable>
-  <UAVariable NodeId="i=11" BrowseName="Date" ParentNodeId="UInt32" DataType="DateTime">
+  <UAVariable NodeId="ns=1;i=11" BrowseName="Date" ParentNodeId="ns=1;i=7" DataType="DateTime" AccessLevel="3">
     <DisplayName>Date</DisplayName>
     <References>
       <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
       <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasComponent" IsForward="false">i=7</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=7</Reference>
     </References>
   </UAVariable>
-  <UAVariable NodeId="i=12" BrowseName="Price" ParentNodeId="UInt32" DataType="i=50">
+  <UAVariable NodeId="ns=1;i=12" BrowseName="Price" ParentNodeId="ns=1;i=7" DataType="i=50" AccessLevel="3">
     <DisplayName>Price</DisplayName>
     <References>
       <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
       <Reference ReferenceType="HasModellingRule">i=78</Reference>
-      <Reference ReferenceType="HasComponent" IsForward="false">i=7</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=7</Reference>
     </References>
   </UAVariable>
   <UAObjectType NodeId="i=13" BrowseName="ProductS">
@@ -136,7 +139,7 @@
       <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
     </References>
   </UAObjectType>
-  <UAVariable NodeId="i=14" BrowseName="Id" ParentNodeId="DateTime" DataType="Int32">
+  <UAVariable NodeId="i=14" BrowseName="Id" ParentNodeId="DateTime" DataType="Int32" AccessLevel="3">
     <DisplayName>Id</DisplayName>
     <References>
       <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
@@ -144,7 +147,7 @@
       <Reference ReferenceType="HasComponent" IsForward="false">i=13</Reference>
     </References>
   </UAVariable>
-  <UAVariable NodeId="i=15" BrowseName="Name" ParentNodeId="DateTime" DataType="String">
+  <UAVariable NodeId="i=15" BrowseName="Name" ParentNodeId="DateTime" DataType="String" AccessLevel="3">
     <DisplayName>Name</DisplayName>
     <References>
       <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
@@ -152,7 +155,7 @@
       <Reference ReferenceType="HasComponent" IsForward="false">i=13</Reference>
     </References>
   </UAVariable>
-  <UAVariable NodeId="i=16" BrowseName="Price" ParentNodeId="DateTime" DataType="i=50">
+  <UAVariable NodeId="i=16" BrowseName="Price" ParentNodeId="DateTime" DataType="i=50" AccessLevel="3">
     <DisplayName>Price</DisplayName>
     <References>
       <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
@@ -160,7 +163,7 @@
       <Reference ReferenceType="HasComponent" IsForward="false">i=13</Reference>
     </References>
   </UAVariable>
-  <UAVariable NodeId="i=17" BrowseName="CustomerId" ParentNodeId="DateTime" DataType="Int32">
+  <UAVariable NodeId="i=17" BrowseName="CustomerId" ParentNodeId="DateTime" DataType="Int32" AccessLevel="3">
     <DisplayName>CustomerId</DisplayName>
     <References>
       <Reference ReferenceType="HasTypeDefinition">i=63</Reference>

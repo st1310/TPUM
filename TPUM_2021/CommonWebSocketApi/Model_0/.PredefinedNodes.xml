@@ -3,22 +3,22 @@
   <uax:NamespaceUris>
     <uax:NamespaceUri>http://cas.eu/UA/CommServer/</uax:NamespaceUri>
   </uax:NamespaceUris>
-  <CustomerS xmlns="http://opcfoundation.org/UA/">
+  <CustomerS xmlns="http://cas.eu/UA/CommServer/">
     <uax:NodeClass>ObjectType_8</uax:NodeClass>
     <uax:NodeId>
-      <uax:Identifier>i=3</uax:Identifier>
+      <uax:Identifier>ns=1;i=3</uax:Identifier>
     </uax:NodeId>
     <uax:BrowseName>
-      <uax:NamespaceIndex>0</uax:NamespaceIndex>
+      <uax:NamespaceIndex>1</uax:NamespaceIndex>
       <uax:Name>CustomerS</uax:Name>
     </uax:BrowseName>
     <uax:SuperTypeId>
       <uax:Identifier>i=58</uax:Identifier>
     </uax:SuperTypeId>
-    <Id>
+    <Id xmlns="http://opcfoundation.org/UA/">
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>i=4</uax:Identifier>
+        <uax:Identifier>ns=1;i=4</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -41,10 +41,10 @@
       <uax:AccessLevel>1</uax:AccessLevel>
       <uax:UserAccessLevel>1</uax:UserAccessLevel>
     </Id>
-    <Name>
+    <Name xmlns="http://opcfoundation.org/UA/">
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>i=5</uax:Identifier>
+        <uax:Identifier>ns=1;i=5</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -64,13 +64,13 @@
         <uax:Identifier>i=12</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>1</uax:AccessLevel>
-      <uax:UserAccessLevel>1</uax:UserAccessLevel>
+      <uax:AccessLevel>3</uax:AccessLevel>
+      <uax:UserAccessLevel>3</uax:UserAccessLevel>
     </Name>
-    <Funds>
+    <Funds xmlns="http://opcfoundation.org/UA/">
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>i=6</uax:Identifier>
+        <uax:Identifier>ns=1;i=6</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -90,26 +90,26 @@
         <uax:Identifier>i=50</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>1</uax:AccessLevel>
-      <uax:UserAccessLevel>1</uax:UserAccessLevel>
+      <uax:AccessLevel>3</uax:AccessLevel>
+      <uax:UserAccessLevel>3</uax:UserAccessLevel>
     </Funds>
   </CustomerS>
-  <InvoiceS xmlns="http://opcfoundation.org/UA/">
+  <InvoiceS xmlns="http://cas.eu/UA/CommServer/">
     <uax:NodeClass>ObjectType_8</uax:NodeClass>
     <uax:NodeId>
-      <uax:Identifier>i=7</uax:Identifier>
+      <uax:Identifier>ns=1;i=7</uax:Identifier>
     </uax:NodeId>
     <uax:BrowseName>
-      <uax:NamespaceIndex>0</uax:NamespaceIndex>
+      <uax:NamespaceIndex>1</uax:NamespaceIndex>
       <uax:Name>InvoiceS</uax:Name>
     </uax:BrowseName>
     <uax:SuperTypeId>
       <uax:Identifier>i=58</uax:Identifier>
     </uax:SuperTypeId>
-    <Id>
+    <Id xmlns="http://opcfoundation.org/UA/">
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>i=8</uax:Identifier>
+        <uax:Identifier>ns=1;i=8</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -129,13 +129,13 @@
         <uax:Identifier>i=6</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>1</uax:AccessLevel>
-      <uax:UserAccessLevel>1</uax:UserAccessLevel>
+      <uax:AccessLevel>3</uax:AccessLevel>
+      <uax:UserAccessLevel>3</uax:UserAccessLevel>
     </Id>
-    <ProductId>
+    <ProductId xmlns="http://opcfoundation.org/UA/">
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>i=9</uax:Identifier>
+        <uax:Identifier>ns=1;i=9</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -155,13 +155,13 @@
         <uax:Identifier>i=6</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>1</uax:AccessLevel>
-      <uax:UserAccessLevel>1</uax:UserAccessLevel>
+      <uax:AccessLevel>3</uax:AccessLevel>
+      <uax:UserAccessLevel>3</uax:UserAccessLevel>
     </ProductId>
-    <CustomerId>
+    <CustomerId xmlns="http://opcfoundation.org/UA/">
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>i=10</uax:Identifier>
+        <uax:Identifier>ns=1;i=10</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -181,13 +181,13 @@
         <uax:Identifier>i=6</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>1</uax:AccessLevel>
-      <uax:UserAccessLevel>1</uax:UserAccessLevel>
+      <uax:AccessLevel>3</uax:AccessLevel>
+      <uax:UserAccessLevel>3</uax:UserAccessLevel>
     </CustomerId>
-    <Date>
+    <Date xmlns="http://opcfoundation.org/UA/">
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>i=11</uax:Identifier>
+        <uax:Identifier>ns=1;i=11</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -207,13 +207,13 @@
         <uax:Identifier>i=13</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>1</uax:AccessLevel>
-      <uax:UserAccessLevel>1</uax:UserAccessLevel>
+      <uax:AccessLevel>3</uax:AccessLevel>
+      <uax:UserAccessLevel>3</uax:UserAccessLevel>
     </Date>
-    <Price>
+    <Price xmlns="http://opcfoundation.org/UA/">
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>i=12</uax:Identifier>
+        <uax:Identifier>ns=1;i=12</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -233,8 +233,8 @@
         <uax:Identifier>i=50</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>1</uax:AccessLevel>
-      <uax:UserAccessLevel>1</uax:UserAccessLevel>
+      <uax:AccessLevel>3</uax:AccessLevel>
+      <uax:UserAccessLevel>3</uax:UserAccessLevel>
     </Price>
   </InvoiceS>
   <ProductS xmlns="http://opcfoundation.org/UA/">
@@ -272,8 +272,8 @@
         <uax:Identifier>i=6</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>1</uax:AccessLevel>
-      <uax:UserAccessLevel>1</uax:UserAccessLevel>
+      <uax:AccessLevel>3</uax:AccessLevel>
+      <uax:UserAccessLevel>3</uax:UserAccessLevel>
     </Id>
     <Name>
       <uax:NodeClass>Variable_2</uax:NodeClass>
@@ -298,8 +298,8 @@
         <uax:Identifier>i=12</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>1</uax:AccessLevel>
-      <uax:UserAccessLevel>1</uax:UserAccessLevel>
+      <uax:AccessLevel>3</uax:AccessLevel>
+      <uax:UserAccessLevel>3</uax:UserAccessLevel>
     </Name>
     <Price>
       <uax:NodeClass>Variable_2</uax:NodeClass>
@@ -324,8 +324,8 @@
         <uax:Identifier>i=50</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>1</uax:AccessLevel>
-      <uax:UserAccessLevel>1</uax:UserAccessLevel>
+      <uax:AccessLevel>3</uax:AccessLevel>
+      <uax:UserAccessLevel>3</uax:UserAccessLevel>
     </Price>
     <CustomerId>
       <uax:NodeClass>Variable_2</uax:NodeClass>
@@ -350,8 +350,8 @@
         <uax:Identifier>i=6</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>1</uax:AccessLevel>
-      <uax:UserAccessLevel>1</uax:UserAccessLevel>
+      <uax:AccessLevel>3</uax:AccessLevel>
+      <uax:UserAccessLevel>3</uax:UserAccessLevel>
     </CustomerId>
   </ProductS>
 </uax:ListOfNodeState>
