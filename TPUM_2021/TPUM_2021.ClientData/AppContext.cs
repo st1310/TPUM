@@ -13,6 +13,7 @@ using TPUM_2021.CommonWebSocketApi;
 using TPUM_2021.OPCUAdependencies.Model;
 
 [assembly: InternalsVisibleTo("TPUM_2021.Test")]
+[assembly: InternalsVisibleTo("TPUM_2021.IntegrationTest")]
 
 namespace TPUM_2021.ClientData
 {
@@ -20,7 +21,7 @@ namespace TPUM_2021.ClientData
     {
         private readonly Dictionary<Type, Type> typePairs;
 
-        public AppContext(int p2p_port = 8081)
+        public AppContext(int p2p_port = 8081, bool connect = true)
         {
             this.p2p_port = p2p_port;
 
@@ -33,7 +34,8 @@ namespace TPUM_2021.ClientData
                 { typeof(IInvoice), typeof(Invoice) }
             };
 
-            Task.Factory.StartNew(() => ConnectClient());
+            if (connect)
+                Task.Factory.StartNew(() => ConnectClient());
         }
 
         protected readonly int p2p_port;
