@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="OPCUAModelDesign.xslt"?>
+<ModelDesign xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" TargetNamespace="http://cas.eu/UA/CommServer/" xmlns="http://opcfoundation.org/UA/ModelDesign.xsd">
+  <Namespaces>
+    <Namespace Name="cas" XmlPrefix="cas">http://cas.eu/UA/CommServer/</Namespace>
+    <Namespace Name="OpcUa" Prefix="Opc.Ua" XmlNamespace="http://opcfoundation.org/UA/2008/02/Types.xsd">http://opcfoundation.org/UA/</Namespace>
+  </Namespaces>
+  <ObjectType xmlns:q1="http://opcfoundation.org/UA/" SymbolicName="q1:CustomerS">
+    <BrowseName>CustomerS</BrowseName>
+    <Children>
+      <Variable SymbolicName="q1:Id" DataType="q1:Int32" />
+      <Variable SymbolicName="q1:Name" DataType="q1:String" />
+      <Variable SymbolicName="q1:Funds" DataType="q1:Decimal" />
+    </Children>
+  </ObjectType>
+  <ObjectType xmlns:q2="http://opcfoundation.org/UA/" SymbolicName="q2:InvoiceS">
+    <BrowseName>InvoiceS</BrowseName>
+    <Children>
+      <Variable SymbolicName="q2:Id" DataType="q2:Int32" />
+      <Variable SymbolicName="q2:ProductId" DataType="q2:Int32" />
+      <Variable SymbolicName="q2:CustomerId" DataType="q2:Int32" />
+      <Variable SymbolicName="q2:Date" DataType="q2:DateTime" />
+      <Variable SymbolicName="q2:Price" DataType="q2:Decimal" />
+    </Children>
+  </ObjectType>
+  <ObjectType xmlns:q3="http://opcfoundation.org/UA/" SymbolicName="q3:ProductS">
+    <BrowseName>ProductS</BrowseName>
+    <Children>
+      <Variable SymbolicName="q3:Id" DataType="q3:Int32" />
+      <Variable SymbolicName="q3:Name" DataType="q3:String" />
+      <Variable SymbolicName="q3:Price" DataType="q3:Decimal" />
+      <Variable SymbolicName="q3:CustomerId" DataType="q3:Int32" />
+    </Children>
+  </ObjectType>
+</ModelDesign>

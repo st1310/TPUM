@@ -1,0 +1,15 @@
+CustomerS,3,ObjectType
+CustomerS_Id,4,Variable
+CustomerS_Name,5,Variable
+CustomerS_Funds,6,Variable
+InvoiceS,7,ObjectType
+InvoiceS_Id,8,Variable
+InvoiceS_ProductId,9,Variable
+InvoiceS_CustomerId,10,Variable
+InvoiceS_Date,11,Variable
+InvoiceS_Price,12,Variable
+ProductS,13,ObjectType
+ProductS_Id,14,Variable
+ProductS_Name,15,Variable
+ProductS_Price,16,Variable
+ProductS_CustomerId,17,Variable

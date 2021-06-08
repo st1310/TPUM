@@ -1,13 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <uax:ListOfNodeState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd">
+  <uax:NamespaceUris>
+    <uax:NamespaceUri>http://cas.eu/UA/CommServer/</uax:NamespaceUri>
+  </uax:NamespaceUris>
   <CustomerS xmlns="http://opcfoundation.org/UA/">
     <uax:NodeClass>ObjectType_8</uax:NodeClass>
     <uax:NodeId>
-      <uax:Identifier>i=15001</uax:Identifier>
+      <uax:Identifier>i=3</uax:Identifier>
     </uax:NodeId>
     <uax:BrowseName>
       <uax:NamespaceIndex>0</uax:NamespaceIndex>
-      <uax:Name>SProduct</uax:Name>
+      <uax:Name>CustomerS</uax:Name>
     </uax:BrowseName>
     <uax:SuperTypeId>
       <uax:Identifier>i=58</uax:Identifier>
@@ -15,7 +18,7 @@
     <Id>
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>i=15002</uax:Identifier>
+        <uax:Identifier>i=4</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -25,20 +28,23 @@
         <uax:Identifier>i=47</uax:Identifier>
       </uax:ReferenceTypeId>
       <uax:TypeDefinitionId>
-        <uax:Identifier>i=62</uax:Identifier>
+        <uax:Identifier>i=63</uax:Identifier>
       </uax:TypeDefinitionId>
-      <uax:NumericId>15002</uax:NumericId>
+      <uax:ModellingRuleId>
+        <uax:Identifier>i=78</uax:Identifier>
+      </uax:ModellingRuleId>
+      <uax:NumericId>4</uax:NumericId>
       <uax:DataType>
         <uax:Identifier>i=6</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>3</uax:AccessLevel>
-      <uax:UserAccessLevel>3</uax:UserAccessLevel>
+      <uax:AccessLevel>1</uax:AccessLevel>
+      <uax:UserAccessLevel>1</uax:UserAccessLevel>
     </Id>
     <Name>
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>i=15003</uax:Identifier>
+        <uax:Identifier>i=5</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -48,20 +54,23 @@
         <uax:Identifier>i=47</uax:Identifier>
       </uax:ReferenceTypeId>
       <uax:TypeDefinitionId>
-        <uax:Identifier>i=62</uax:Identifier>
+        <uax:Identifier>i=63</uax:Identifier>
       </uax:TypeDefinitionId>
-      <uax:NumericId>15003</uax:NumericId>
+      <uax:ModellingRuleId>
+        <uax:Identifier>i=78</uax:Identifier>
+      </uax:ModellingRuleId>
+      <uax:NumericId>5</uax:NumericId>
       <uax:DataType>
         <uax:Identifier>i=12</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>3</uax:AccessLevel>
-      <uax:UserAccessLevel>3</uax:UserAccessLevel>
+      <uax:AccessLevel>1</uax:AccessLevel>
+      <uax:UserAccessLevel>1</uax:UserAccessLevel>
     </Name>
     <Funds>
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>i=15004</uax:Identifier>
+        <uax:Identifier>i=6</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -71,21 +80,24 @@
         <uax:Identifier>i=47</uax:Identifier>
       </uax:ReferenceTypeId>
       <uax:TypeDefinitionId>
-        <uax:Identifier>i=62</uax:Identifier>
+        <uax:Identifier>i=63</uax:Identifier>
       </uax:TypeDefinitionId>
-      <uax:NumericId>15004</uax:NumericId>
+      <uax:ModellingRuleId>
+        <uax:Identifier>i=78</uax:Identifier>
+      </uax:ModellingRuleId>
+      <uax:NumericId>6</uax:NumericId>
       <uax:DataType>
         <uax:Identifier>i=50</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>3</uax:AccessLevel>
-      <uax:UserAccessLevel>3</uax:UserAccessLevel>
+      <uax:AccessLevel>1</uax:AccessLevel>
+      <uax:UserAccessLevel>1</uax:UserAccessLevel>
     </Funds>
   </CustomerS>
   <InvoiceS xmlns="http://opcfoundation.org/UA/">
     <uax:NodeClass>ObjectType_8</uax:NodeClass>
     <uax:NodeId>
-      <uax:Identifier>i=15005</uax:Identifier>
+      <uax:Identifier>i=7</uax:Identifier>
     </uax:NodeId>
     <uax:BrowseName>
       <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -97,7 +109,7 @@
     <Id>
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>i=15006</uax:Identifier>
+        <uax:Identifier>i=8</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -107,20 +119,23 @@
         <uax:Identifier>i=47</uax:Identifier>
       </uax:ReferenceTypeId>
       <uax:TypeDefinitionId>
-        <uax:Identifier>i=62</uax:Identifier>
+        <uax:Identifier>i=63</uax:Identifier>
       </uax:TypeDefinitionId>
-      <uax:NumericId>15006</uax:NumericId>
+      <uax:ModellingRuleId>
+        <uax:Identifier>i=78</uax:Identifier>
+      </uax:ModellingRuleId>
+      <uax:NumericId>8</uax:NumericId>
       <uax:DataType>
         <uax:Identifier>i=6</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>3</uax:AccessLevel>
-      <uax:UserAccessLevel>3</uax:UserAccessLevel>
+      <uax:AccessLevel>1</uax:AccessLevel>
+      <uax:UserAccessLevel>1</uax:UserAccessLevel>
     </Id>
     <ProductId>
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>i=15007</uax:Identifier>
+        <uax:Identifier>i=9</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -130,20 +145,23 @@
         <uax:Identifier>i=47</uax:Identifier>
       </uax:ReferenceTypeId>
       <uax:TypeDefinitionId>
-        <uax:Identifier>i=62</uax:Identifier>
+        <uax:Identifier>i=63</uax:Identifier>
       </uax:TypeDefinitionId>
-      <uax:NumericId>15007</uax:NumericId>
+      <uax:ModellingRuleId>
+        <uax:Identifier>i=78</uax:Identifier>
+      </uax:ModellingRuleId>
+      <uax:NumericId>9</uax:NumericId>
       <uax:DataType>
         <uax:Identifier>i=6</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>3</uax:AccessLevel>
-      <uax:UserAccessLevel>3</uax:UserAccessLevel>
+      <uax:AccessLevel>1</uax:AccessLevel>
+      <uax:UserAccessLevel>1</uax:UserAccessLevel>
     </ProductId>
     <CustomerId>
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>i=15008</uax:Identifier>
+        <uax:Identifier>i=10</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -153,20 +171,23 @@
         <uax:Identifier>i=47</uax:Identifier>
       </uax:ReferenceTypeId>
       <uax:TypeDefinitionId>
-        <uax:Identifier>i=62</uax:Identifier>
+        <uax:Identifier>i=63</uax:Identifier>
       </uax:TypeDefinitionId>
-      <uax:NumericId>15008</uax:NumericId>
+      <uax:ModellingRuleId>
+        <uax:Identifier>i=78</uax:Identifier>
+      </uax:ModellingRuleId>
+      <uax:NumericId>10</uax:NumericId>
       <uax:DataType>
         <uax:Identifier>i=6</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>3</uax:AccessLevel>
-      <uax:UserAccessLevel>3</uax:UserAccessLevel>
+      <uax:AccessLevel>1</uax:AccessLevel>
+      <uax:UserAccessLevel>1</uax:UserAccessLevel>
     </CustomerId>
     <Date>
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>i=15009</uax:Identifier>
+        <uax:Identifier>i=11</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -176,20 +197,23 @@
         <uax:Identifier>i=47</uax:Identifier>
       </uax:ReferenceTypeId>
       <uax:TypeDefinitionId>
-        <uax:Identifier>i=62</uax:Identifier>
+        <uax:Identifier>i=63</uax:Identifier>
       </uax:TypeDefinitionId>
-      <uax:NumericId>15009</uax:NumericId>
+      <uax:ModellingRuleId>
+        <uax:Identifier>i=78</uax:Identifier>
+      </uax:ModellingRuleId>
+      <uax:NumericId>11</uax:NumericId>
       <uax:DataType>
         <uax:Identifier>i=13</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>3</uax:AccessLevel>
-      <uax:UserAccessLevel>3</uax:UserAccessLevel>
+      <uax:AccessLevel>1</uax:AccessLevel>
+      <uax:UserAccessLevel>1</uax:UserAccessLevel>
     </Date>
     <Price>
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>i=15010</uax:Identifier>
+        <uax:Identifier>i=12</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -199,25 +223,28 @@
         <uax:Identifier>i=47</uax:Identifier>
       </uax:ReferenceTypeId>
       <uax:TypeDefinitionId>
-        <uax:Identifier>i=62</uax:Identifier>
+        <uax:Identifier>i=63</uax:Identifier>
       </uax:TypeDefinitionId>
-      <uax:NumericId>15010</uax:NumericId>
+      <uax:ModellingRuleId>
+        <uax:Identifier>i=78</uax:Identifier>
+      </uax:ModellingRuleId>
+      <uax:NumericId>12</uax:NumericId>
       <uax:DataType>
         <uax:Identifier>i=50</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>3</uax:AccessLevel>
-      <uax:UserAccessLevel>3</uax:UserAccessLevel>
+      <uax:AccessLevel>1</uax:AccessLevel>
+      <uax:UserAccessLevel>1</uax:UserAccessLevel>
     </Price>
   </InvoiceS>
   <ProductS xmlns="http://opcfoundation.org/UA/">
     <uax:NodeClass>ObjectType_8</uax:NodeClass>
     <uax:NodeId>
-      <uax:Identifier>i=15011</uax:Identifier>
+      <uax:Identifier>i=13</uax:Identifier>
     </uax:NodeId>
     <uax:BrowseName>
       <uax:NamespaceIndex>0</uax:NamespaceIndex>
-      <uax:Name>InvoiceS</uax:Name>
+      <uax:Name>ProductS</uax:Name>
     </uax:BrowseName>
     <uax:SuperTypeId>
       <uax:Identifier>i=58</uax:Identifier>
@@ -225,7 +252,7 @@
     <Id>
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>i=15012</uax:Identifier>
+        <uax:Identifier>i=14</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -235,20 +262,23 @@
         <uax:Identifier>i=47</uax:Identifier>
       </uax:ReferenceTypeId>
       <uax:TypeDefinitionId>
-        <uax:Identifier>i=62</uax:Identifier>
+        <uax:Identifier>i=63</uax:Identifier>
       </uax:TypeDefinitionId>
-      <uax:NumericId>15012</uax:NumericId>
+      <uax:ModellingRuleId>
+        <uax:Identifier>i=78</uax:Identifier>
+      </uax:ModellingRuleId>
+      <uax:NumericId>14</uax:NumericId>
       <uax:DataType>
         <uax:Identifier>i=6</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>3</uax:AccessLevel>
-      <uax:UserAccessLevel>3</uax:UserAccessLevel>
+      <uax:AccessLevel>1</uax:AccessLevel>
+      <uax:UserAccessLevel>1</uax:UserAccessLevel>
     </Id>
     <Name>
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>i=15013</uax:Identifier>
+        <uax:Identifier>i=15</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -258,20 +288,23 @@
         <uax:Identifier>i=47</uax:Identifier>
       </uax:ReferenceTypeId>
       <uax:TypeDefinitionId>
-        <uax:Identifier>i=62</uax:Identifier>
+        <uax:Identifier>i=63</uax:Identifier>
       </uax:TypeDefinitionId>
-      <uax:NumericId>15013</uax:NumericId>
+      <uax:ModellingRuleId>
+        <uax:Identifier>i=78</uax:Identifier>
+      </uax:ModellingRuleId>
+      <uax:NumericId>15</uax:NumericId>
       <uax:DataType>
         <uax:Identifier>i=12</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>3</uax:AccessLevel>
-      <uax:UserAccessLevel>3</uax:UserAccessLevel>
+      <uax:AccessLevel>1</uax:AccessLevel>
+      <uax:UserAccessLevel>1</uax:UserAccessLevel>
     </Name>
     <Price>
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>i=15014</uax:Identifier>
+        <uax:Identifier>i=16</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -281,20 +314,23 @@
         <uax:Identifier>i=47</uax:Identifier>
       </uax:ReferenceTypeId>
       <uax:TypeDefinitionId>
-        <uax:Identifier>i=62</uax:Identifier>
+        <uax:Identifier>i=63</uax:Identifier>
       </uax:TypeDefinitionId>
-      <uax:NumericId>15014</uax:NumericId>
+      <uax:ModellingRuleId>
+        <uax:Identifier>i=78</uax:Identifier>
+      </uax:ModellingRuleId>
+      <uax:NumericId>16</uax:NumericId>
       <uax:DataType>
         <uax:Identifier>i=50</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>3</uax:AccessLevel>
-      <uax:UserAccessLevel>3</uax:UserAccessLevel>
+      <uax:AccessLevel>1</uax:AccessLevel>
+      <uax:UserAccessLevel>1</uax:UserAccessLevel>
     </Price>
     <CustomerId>
       <uax:NodeClass>Variable_2</uax:NodeClass>
       <uax:NodeId>
-        <uax:Identifier>i=15015</uax:Identifier>
+        <uax:Identifier>i=17</uax:Identifier>
       </uax:NodeId>
       <uax:BrowseName>
         <uax:NamespaceIndex>0</uax:NamespaceIndex>
@@ -304,15 +340,18 @@
         <uax:Identifier>i=47</uax:Identifier>
       </uax:ReferenceTypeId>
       <uax:TypeDefinitionId>
-        <uax:Identifier>i=62</uax:Identifier>
+        <uax:Identifier>i=63</uax:Identifier>
       </uax:TypeDefinitionId>
-      <uax:NumericId>15015</uax:NumericId>
+      <uax:ModellingRuleId>
+        <uax:Identifier>i=78</uax:Identifier>
+      </uax:ModellingRuleId>
+      <uax:NumericId>17</uax:NumericId>
       <uax:DataType>
         <uax:Identifier>i=6</uax:Identifier>
       </uax:DataType>
       <uax:ValueRank>-1</uax:ValueRank>
-      <uax:AccessLevel>3</uax:AccessLevel>
-      <uax:UserAccessLevel>3</uax:UserAccessLevel>
+      <uax:AccessLevel>1</uax:AccessLevel>
+      <uax:UserAccessLevel>1</uax:UserAccessLevel>
     </CustomerId>
   </ProductS>
 </uax:ListOfNodeState>
