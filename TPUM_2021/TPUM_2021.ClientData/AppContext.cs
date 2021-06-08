@@ -7,8 +7,6 @@ using System.Runtime.CompilerServices;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
-using TPUM_2021.CommonData;
-using TPUM_2021.CommonData.Model;
 using TPUM_2021.CommonWebSocketApi;
 using TPUM_2021.OPCUAdependencies.Model;
 

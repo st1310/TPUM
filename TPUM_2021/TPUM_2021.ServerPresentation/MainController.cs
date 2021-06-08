@@ -5,7 +5,6 @@ using System.Linq;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
-using TPUM_2021.CommonLogic;
 using TPUM_2021.CommonWebSocketApi;
 using TPUM_2021.OPCUAdependencies.Model;
 using TPUM_2021.ServerLogic;
@@ -48,20 +47,6 @@ namespace TPUM_2021.ServerPresentation
 
                     return Serialize(typeof(List<ProductS>), customers);
                 }
-
-                //if (parameters[1].Equals("GetAvailable"))
-                //{
-                //    List<ProductDto> products = new List<ProductDto>(_ProductQuery.GetAvailableProducts());
-
-                //    return Serialize(typeof(List<ProductDto>), products);
-                //}
-                
-                //if (parameters[1].Equals("GetByCustomerId"))
-                //{
-                //    List<ProductDto> products = new List<ProductDto>(_ProductQuery.GetProductsByCustomerId(int.Parse(parameters[2])));
-
-                //    return Serialize(typeof(List<ProductDto>), products);
-                //}
 
                 if (parameters[1].Equals("Update"))
                 {

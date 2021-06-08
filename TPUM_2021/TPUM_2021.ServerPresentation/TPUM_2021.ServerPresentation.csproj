@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CommonLogic\TPUM_2021.CommonLogic.csproj" />
     <ProjectReference Include="..\CommonWebSocketApi\TPUM_2021.CommonWebSocketApi.csproj" />
     <ProjectReference Include="..\TPUM_2021.Logic\TPUM_2021.ServerLogic.csproj" />
   </ItemGroup>

@@ -2,8 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using TPUM_2021.CommonData;
-using TPUM_2021.CommonData.Model;
 
 [assembly: InternalsVisibleTo("TPUM_2021.ServerTest")]
 

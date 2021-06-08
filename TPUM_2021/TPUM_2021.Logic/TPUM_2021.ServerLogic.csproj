@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -9,8 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CommonData\TPUM_2021.CommonData.csproj" />
-    <ProjectReference Include="..\CommonLogic\TPUM_2021.CommonLogic.csproj" />
     <ProjectReference Include="..\TPUM_2021.Data\TPUM_2021.ServerData.csproj" />
   </ItemGroup>
 

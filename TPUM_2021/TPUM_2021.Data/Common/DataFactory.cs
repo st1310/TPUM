@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TPUM_2021.CommonData;
-using TPUM_2021.CommonData.Model;
 
 namespace TPUM_2021.ServerData
 {
