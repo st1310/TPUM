@@ -23,7 +23,7 @@ namespace TPUM_2021.IntegrationTests
             observer.Subscribe(context);
 
             // Act
-            Process.Start("C:\\Users\\stets\\Informatyka\\TPUM\\Project\\TPUM_2021\\TPUM_2021.ServerPresentation\\bin\\Debug\\netcoreapp3.1\\TPUM_2021.ServerPresentation.exe");
+            Process.Start("..\\..\\..\\..\\TPUM_2021.ServerPresentation\\bin\\Debug\\netcoreapp3.1\\TPUM_2021.ServerPresentation.exe");
             Task.Factory.StartNew(() => context.ConnectClient());
 
             string result = await promise.Task;
